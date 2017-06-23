@@ -1,3 +1,3 @@
 # Under-the-hood-ReactJS
 
-[page](./pages/index.html)
+![svf](./images/jsx-to-vdom.svg)
