@@ -1,0 +1,20 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="prism.css"/>
+	</head>
+	<body>
+	
+	<div>
+	<pre>
+		<code class="language-javascript">
+			if (tokens instanceof Token) {
+				return new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);
+			} else if (_.util.type(tokens) === 'Array') {
+				return tokens.map(_.util.encode);
+			} else {
+		</code></pre>
+	</div>
+	
+		<script src="prism.js"></script>
+	</body>
+</html>

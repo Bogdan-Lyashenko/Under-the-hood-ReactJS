@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>React under hood: stack reconciler</title>
+    <link rel="stylesheet" href="lib/code-style/prism.css"/>
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="parent-all-scheme">
+        <img id="img-all-scheme" src="../images/intro/all-page-stack-reconciler.svg" />
+
+        <div id="overlays-parent">
+            <div class="overlay-piece" id="overlay-piece-left"></div>
+            <div class="overlay-piece" id="overlay-piece-top"></div>
+            <div class="overlay-piece" id="overlay-piece-right"></div>
+            <div class="overlay-piece" id="overlay-piece-bottom"></div>
+        <div id="overlay-border-rect"></div>
+        </div>
+    </div>
+
+
+    <div id="parent-part-scheme">
+        <img id="img-part-scheme"/>
+        <img id="img-part-scheme-a"/>
+        <img id="img-part-scheme-b"/>
+    </div>
+
+    <div id="slide-panel">
+        <div id="slide-header"></div>
+        <div id="slide-content">
+            <div id="text-block"></div>
+            <img id="slide-img-scheme"/>
+        </div>
+    </div>
+
+    <div id="controls">
+        <button data-action-step="0">0</button>
+        <button data-action-step="1">1</button>
+        <button data-action-step="2">2</button>
+        <button data-action-step="3">3</button>
+        <button data-action-step="4">4</button>
+        <button data-action-step="5">5</button>
+        <button data-action-step="6">6</button>
+        <button data-action-step="7">7</button>
+        <button data-action-step="8">8</button>
+        <button data-action-step="9">9</button>
+        <button data-action-step="10">10</button>
+        <button data-action-step="11">11</button>
+        <button data-action-step="12">12</button>
+        <button data-action-step="13">13</button>
+        <button data-action-step="14">14</button>
+        <button data-action-step="15">15</button>
+    </div>
+
+    <!-- code -->
+
+    <div class="codeBlockItem" id="firstCodeExample">
+        <code class="language-javascript">
+            class ChildCmp extends React.Component {
+                render() {
+                    return &lt;div&gt;{this.props.childMessage}&lt;/div&gt;
+                }
+            }
+
+            class ExampleApplication extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {message: 'no message'};
+                }
+
+                componentWillMount() {
+                    //...
+                }
+
+                componentDidMount() {
+                    /*setTimeout(()=> {
+                    this.setState({ message: 'timeout state message' });
+                    }, 1000)*/
+                }
+
+                shouldComponentUpdate(nextProps, nextState, nextContext) {
+                    return true;
+                }
+
+                componentDidUpdate(prevProps, prevState, prevContext) {
+                    //...
+                }
+
+                componentWillReceiveProps(nextProps) {
+                    //...
+                }
+
+                componentWillUnmount() {
+                    //...
+                }
+
+                onClickHandler() {
+                    /*this.setState({ message: 'click state message' });*/
+                }
+
+                render() {
+                    return &lt;div&gt;
+                        &lt;button onClick={this.onClickHandler.bind(this)}&gt;set state button&lt;/button&gt;
+                        &lt;ChildCmp childMessage={this.state.message} /&gt;
+                        And some text as well!
+                    &lt;/div&gt;
+                }
+            }
+
+            ReactDOM.render(
+                &lt;ExampleApplication hello={‘world’} /&gt;,
+                document.getElementById('container'),
+                function() {}
+            );
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="transactionCodeExample">
+        <code class="language-javascript">
+            // \src\renderers\shared\stack\reconciler\ReactDefaultBatchingStrategy.js#19
+
+            var RESET_BATCHED_UPDATES = {
+                initialize: emptyFunction,
+                close: function() {
+                    ReactDefaultBatchingStrategy.isBatchingUpdates = false;
+                },
+            };
+
+            var FLUSH_BATCHED_UPDATES = {
+                initialize: emptyFunction,
+                close: ReactUpdates.flushBatchedUpdates.bind(ReactUpdates),
+            };
+
+            var TRANSACTION_WRAPPERS = [FLUSH_BATCHED_UPDATES, RESET_BATCHED_UPDATES];
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="transactionReactReconcileTransaction">
+        <code class="language-javascript">
+            //\src\renderers\dom\client\ReactReconcileTransaction.js#89
+
+            var TRANSACTION_WRAPPERS = [
+                SELECTION_RESTORATION,
+                EVENT_SUPPRESSION,
+                ON_DOM_READY_QUEUEING,
+            ];
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="willUpdate3">
+        <code class="language-javascript">
+            // \src\renderers\shared\stack\reconciler\ReactCompositeComponent.js#476
+
+            if (inst.componentWillMount) {
+                //..
+                inst.componentWillMount();
+
+                // When mounting, calls to `setState` by `componentWillMount` will set
+                // `this._pendingStateQueue` without triggering a re-render.
+                if (this._pendingStateQueue) {
+                    inst.state = this._processPendingState(inst.props, inst.context);
+                }
+            }
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="setHtml4">
+        <code class="language-javascript">
+            `props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`.
+            Please visit https://fb.me/react-invariant-dangerously-set-inner-html for more information.
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="setState8">
+        <code class="language-javascript">
+            //src\isomorphic\modern\class\ReactComponent.js#68
+
+            this.updater.enqueueSetState(this, partialState)
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="fakeEventCode9">
+        <code class="language-javascript">
+            var fakeNode = document.createElement('react');
+
+            ReactErrorUtils.invokeGuardedCallback = function (name, func, a) {
+                var boundFunc = func.bind(null, a);
+                var evtType = 'react-' + name;
+
+                fakeNode.addEventListener(evtType, boundFunc, false);
+
+                var evt = document.createEvent('Event');
+                evt.initEvent(evtType, false, false);
+
+                fakeNode.dispatchEvent(evt);
+                fakeNode.removeEventListener(evtType, boundFunc, false);
+            };
+
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="nestedTransactions10">
+        <code class="language-javascript">
+            [NESTED_UPDATES, UPDATE_QUEUEING].initialize()
+            [SELECTION_RESTORATION, EVENT_SUPPRESSION, ON_DOM_READY_QUEUEING].initialize()
+
+            - method -> ReactUpdates.runBatchedUpdates
+
+            [SELECTION_RESTORATION, EVENT_SUPPRESSION, ON_DOM_READY_QUEUEING].close()
+            [NESTED_UPDATES, UPDATE_QUEUEING].close()
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="shouldUpdate12">
+        <code class="language-javascript">
+            //src/renderers/shared/shared/shouldUpdateReactComponent.js#25
+
+            function shouldUpdateReactComponent(prevElement, nextElement) {
+                var prevEmpty = prevElement === null || prevElement === false;
+                var nextEmpty = nextElement === null || nextElement === false;
+
+                if (prevEmpty || nextEmpty) {
+                    return prevEmpty === nextEmpty;
+                }
+
+                var prevType = typeof prevElement;
+                var nextType = typeof nextElement;
+
+                if (prevType === 'string' || prevType === 'number') {
+                    return (nextType === 'string' || nextType === 'number');
+                } else {
+                    return (
+                        nextType === 'object' &&
+                        prevElement.type === nextElement.type &&
+                        prevElement.key === nextElement.key
+                    );
+                }
+            }
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="updateConfig14">
+        <code class="language-javascript">
+            {
+                afterNode: null,
+                content: "click state message",
+                fromIndex: null,
+                fromNode: null,
+                toIndex: null,
+                type: "TEXT_CONTENT"
+            }
+        </code>
+    </div>
+
+    <div class="codeBlockItem" id="domChildrenOperation14">
+        <code class="language-javascript">
+            //src\renderers\dom\client\utils\DOMChildrenOperations.js#172
+
+            processUpdates: function(parentNode, updates) {
+                for (var k = 0; k < updates.length; k++) {
+                    var update = updates[k];
+
+                    switch (update.type) {
+                        case 'INSERT_MARKUP':
+                            insertLazyTreeChildAt(
+                            parentNode,
+                            update.content,
+                            getNodeAfter(parentNode, update.afterNode)
+                            );
+                        break;
+
+                        case 'MOVE_EXISTING':
+                            moveChild(
+                            parentNode,
+                            update.fromNode,
+                            getNodeAfter(parentNode, update.afterNode)
+                            );
+                        break;
+
+                        case 'SET_MARKUP':
+                            setInnerHTML(
+                            parentNode,
+                            update.content
+                            );
+                        break;
+
+                        case 'TEXT_CONTENT':
+                            setTextContent(
+                            parentNode,
+                            update.content
+                            );
+                        break;
+
+                        case 'REMOVE_NODE':
+                            removeChild(parentNode, update.fromNode);
+                        break;
+                    }
+                }
+            }
+
+        </code>
+    </div>
+
+
+    <!-- templates -->
+
+    <script type="text/template" id="platformsList">
+        React is built to support many environments.
+        <ul>
+            <li>Mobile (ReactNative)</li>
+            <li>Browser (ReactDOM)</li>
+            <li>Server Rendering</li>
+            <li>ReactART(for drawing vector graphics using React)</li>
+        </ul>
+    </script>
+
+    <script type="text/template" id="mountingDescription0">
+        Mounting is the process of initializing a React component by creating its representative DOM elements and inserting them into a supplied `container`
+    </script>
+
+    <script type="text/template" id="transactionSteps">
+        <ul>
+            <li>call each wrapper.initialize and cache returned values (it can be used further)</li>
+            <li>call transaction method itself</li>
+            <li>call each wrapper.close</li>
+        </ul>
+    </script>
+
+    <script type="text/template" id="transactionsInReact">
+        Use cases for transactions in React:
+        <ul>
+            <li>Preserving the input selection ranges before/after reconciliation. Restoring selection even in the event of an unexpected error.</li>
+            <li>Deactivating events while rearranging the DOM, preventing blurs/focuses, while guaranteeing that afterwards, the event system is reactivated.</li>
+            <li>Flushing a queue of collected DOM mutations to the main UI thread after a reconciliation takes place in a worker thread.</li>
+            <li>Invoking any collected `componentDidUpdate` callbacks after rendering new content.</li>
+        </ul>
+    </script>
+
+    <script type="text/template" id="validateDOMNesting">
+        <br/>Validate DOM nesting<br/>
+        https://html.spec.whatwg.org/multipage/parsing.html<br/>
+    </script>
+
+    <script type="text/template" id="mountingScheme6">
+        <ol>
+            <li>1) React instansiate ReactCompositeComponent for each your custom component (with component lifecylce hooks like ‘componentWillMount’ etc) and mount it.</li>
+            <li>2) During mounting, at first, instance of your custom component will be created (constructor called).</li>
+            <li>3) Then, its render method called (let’s take simple case, render returns &lt;div&gt;) and React.createElement creates React elements. It can be called directly or after parsing JSX by Babel and replacing tags in your render. But, it’s not exactly what we need, see next below.</li>
+            <li>4) We need DOM component for our &lt;div&gt;. So, during instansiating process, we create instances of ReactDOMComponent from that element-objects (mentioned above).</li>
+            <li>5) Then, we need to mount DOM component. That actually means create DOM elements, assigning event listeners etc.</li>
+            <li>6) Then, we process initial children of our DOM component. We create instances of them and mount them as well, depends on what each item of children is, custom component or just HTML tag, we recurse to step 1) or step 5) respectevly. And again, for all nested elements.</li>
+        </ol>
+    </script>
+
+    <script type="text/template" id="synthEvent9">
+        ‘synthetic events’
+    </script>
+
+    <script type="text/template" id="updateMethod11">
+        Perform an update to a mounted component. The componentWillReceiveProps and shouldComponentUpdate methods are called, then (assuming the update isn't skipped) the remaining update lifecycle methods are called and the DOM representation is updated. By default, this implements React's rendering and reconciliation algorithm. Sophisticated clients may wish to override this.
+    </script>
+
+
+    <script type="text/template" id="setStateScheme9">
+        <ol>
+            <li>1) call setState </li>
+            <li>2) open batching transaction if it’s not opened yet.</li>
+            <li>3) add affected components to dirtyComponents list</li>
+            <li>4) close transaction with calling ReactUpdates.flushBatchedUpdates, what actually means ‘process whatever was collected into dirtyComponents’. </li>
+        </ol>
+    </script>
+
+    <!-- injected scripts -->
+    <script type="text/javascript" src="lib/anime.min.js"></script>
+    <script type="text/javascript" src="lib/code-style/prism.js"></script>
+    <script type="text/javascript" src="steps.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>
