@@ -32,8 +32,8 @@
     <div id="slide-panel">
         <div id="slide-header"></div>
         <div id="slide-content">
-            <div id="text-block"></div>
-            <img id="slide-img-scheme"/>
+            <div id="html-block"></div>
+            <img id="slide-img-scheme" class="slide-img-scheme"/>
         </div>
     </div>
 
@@ -318,8 +318,27 @@
         </ul>
     </script>
 
+    <script type="text/template" id="mountingScheme1Small">
+        <h2 style="margin-bottom: 20px;">Technically it should be like that..</h2>
+        <img src="../images/0/mounting-scheme-1-small.svg"/>
+    </script>
+
+    <script type="text/template" id="mountingScheme1Big">
+        <h2 style="margin-bottom: 20px;">But in fact, it should handle a lot of stuff</h2>
+        <img src="../images/0/mounting-scheme-1-big.svg"/>
+    </script>
+
     <script type="text/template" id="mountingDescription0">
-        Mounting is the process of initializing a React component by creating its representative DOM elements and inserting them into a supplied `container`
+        <quote style="width: 1300px">
+        Mounting is the process of initializing a React component by creating its representative DOM elements
+        and inserting them into a supplied `container`
+        </quote>
+    </script>
+
+
+    <script type="text/template" id="jsxToVdom">
+        <h2 style="margin-bottom: 20px;">It goes through several phases and mappings (all in JS)</h2>
+        <img src="../images/0/jsx-to-vdom.svg" width="1000"/>
     </script>
 
     <script type="text/template" id="transactionSteps">

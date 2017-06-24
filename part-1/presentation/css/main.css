@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    color: #333;
+    color: #444;
     background-color: rgb(254, 254, 254);
 }
 #controls {
@@ -89,19 +89,19 @@ html, body {
     position: relative;
 }
 
-#slide-img-scheme {
+.slide-img-scheme {
     top: 10px;
     left: 10px;
     position: absolute;
 }
 
-#text-block {
+#html-block {
     position: absolute;
     left: 10px;
     top: 10px;
 }
 
-.funnyFactBlock {
+.intFactBlock {
     font-size: 26pt;
 }
 
@@ -116,4 +116,12 @@ html, body {
 
 .codeBlockItem {
     display: none;
+}
+
+quote {
+    border-left: 7px solid #eee;
+    display: block;
+    color: #555;
+    padding-left: 10px;
+    font-size: 29pt;
 }

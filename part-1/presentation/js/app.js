@@ -19,7 +19,7 @@
             this.initView();
             this.initEventsListeners();
 
-            this.gotoStep(0);
+            this.gotoStep(SLIDE);
         },
 
         initView: function() {
@@ -44,7 +44,7 @@
                 slidePanel: document.getElementById('slide-panel'),
                 slideContent: document.getElementById('slide-content'),
                 slideImgScheme: document.getElementById('slide-img-scheme'),
-                textBlock: document.getElementById('text-block')
+                htmlBlock: document.getElementById('html-block')
             }
 
         },
@@ -113,17 +113,17 @@
             return template.innerHTML;
         },
 
-        showFunnyFactOnSidePanel: function (part, options) {
-            var content = '<div class="funnyFactBlock"><b>&lt;funny fact&gt;</b>' +
-                this.getInnerHtmlOfTemplate(options.text)
-                + '<b>&lt;/funny fact&gt;</b></div>';
+        showIntFactOnSidePanel: function (part, options) {
+            var content = '<div class="intFactBlock"><b>&lt;interesting fact&gt;</b>' +
+                this.getInnerHtmlOfTemplate(options.id)
+                + '<b>&lt;/interesting fact&gt;</b></div>';
 
             return this.setAndShowContentOnSlidePanel(content, options);
         },
 
         showTextOnSidePanel: function (part, options) {
             var content = '<div class="textBlock">'+
-                this.getInnerHtmlOfTemplate(options.text)
+                this.getInnerHtmlOfTemplate(options.id)
             + '</div>';
 
             return this.setAndShowContentOnSlidePanel(content, options);
@@ -131,8 +131,14 @@
 
         showCodeOnSidePanel: function (part, options) {
             var content = '<pre class="codeBlock">'+
-                this.getInnerHtmlOfTemplate(options.text)
+                this.getInnerHtmlOfTemplate(options.id)
                 + '</pre>';
+
+            return this.setAndShowContentOnSlidePanel(content, options);
+        },
+
+        showHtmlOnSidePanel: function (part, options) {
+            var content = this.getInnerHtmlOfTemplate(options.id);
 
             return this.setAndShowContentOnSlidePanel(content, options);
         },
@@ -147,11 +153,11 @@
             });
         },
 
-        setSlideContentHtml: function (text = '', offset={}) {
-            this.view.textBlock.innerHTML = text;
+        setSlideContentHtml: function (html = '', offset={}) {
+            this.view.htmlBlock.innerHTML = html;
 
-            this.view.textBlock.style.left = (offset.x || 0) + 'px';
-            this.view.textBlock.style.top = (offset.y || 0) + 'px';
+            this.view.htmlBlock.style.left = (offset.x || 0) + 'px';
+            this.view.htmlBlock.style.top = (offset.y || 0) + 'px';
         },
 
         resizeAndShowSidePanel: function (content, options) {
@@ -190,7 +196,7 @@
                 dF.appendChild(img);
             }
 
-            this.view.textBlock.appendChild(dF);
+            this.view.htmlBlock.appendChild(dF);
             return this.moveCPartsToLeft(list).then(()=> {
                 this.isActingDone = true;
             });
@@ -198,7 +204,7 @@
 
         exchangePanelImgs: function (part, options) {
             return this.hideSlideImg().then(()=> {
-                this.setSlideContentImg(options.img, options.imgOffset);
+                this.setSlideContentImg(options.img, options.offset);
                 return this.showSlideImg();
             }).then(() => {
                 this.isActingDone = true;
@@ -211,7 +217,7 @@
 
             return this.resizeSlidePanelTo().then(()=> {
                 this.hideAllSchemeImg();
-                this.setSlideContentImg(options.img, options.imgOffset);
+                this.setSlideContentImg(options.img, options.offset);
                 return this.showSlideImg();
             }).then(() => {
                 this.isActingDone = true;
@@ -219,7 +225,7 @@
         },
 
         setAndShowSidePanelImg: function (part, options) {
-            this.setSlideContentImg(options.img, options.imgOffset);
+            this.setSlideContentImg(options.img, options.offset);
             return this.showSlidePanel().then(() => {
                 this.isActingDone = true;
             });
@@ -281,14 +287,17 @@
                 case 'resizeAndShowSidePanel':
                     return this.resizeAndShowSidePanel(options);
 
-                case 'showFunnyFactOnSidePanel':
-                    return this.showFunnyFactOnSidePanel(part, options);
+                case 'showIntFactOnSidePanel':
+                    return this.showIntFactOnSidePanel(part, options);
 
                 case 'showTextOnSidePanel':
                     return this.showTextOnSidePanel(part, options);
 
                 case 'showCodeOnSidePanel':
                     return this.showCodeOnSidePanel(part, options);
+
+                case 'showHtmlOnSidePanel':
+                    return this.showHtmlOnSidePanel(part, options);
 
                 case 'scrollPartSchemeTo':
                     return this.scrollPartSchemeTo(part, options);
@@ -320,12 +329,12 @@
             return this.setImgVisibility(this.view.slideImgScheme, 0);
         },
 
-        setSlideContentImg: function (img,  imgOffset={}) {
+        setSlideContentImg: function (img,  offset={}) {
             var slideImgScheme = this.view.slideImgScheme;
 
             slideImgScheme.src = img ? ROOT_PATH + img : '';
-            slideImgScheme.style.left = (imgOffset.x || 10) + 'px';
-            slideImgScheme.style.top = (imgOffset.y || 10) + 'px';
+            slideImgScheme.style.left = (offset.x || 10) + 'px';
+            slideImgScheme.style.top = (offset.y || 10) + 'px';
         },
 
         showSlidePanel: function (val) {
