@@ -1,28 +1,31 @@
-# Intro
+## Intro
 
 ### Scheme, first look
 
 
 [![](../images/intro/all-page-stack-reconciler-25-scale.jpg)](../images/intro/all-page-stack-reconciler.svg)
-<em>1.0 All scheme (click to open in big size)</em>
+
+<em>Intro.0 All scheme (clickable)</em>
 
 So.. have a look. Take your time. Of course, overall it looks complex, but in fact, it describes only two processes: mount and update. I skip unmount because it’s kind of ‘reversed mount’, so, I’ve just decided to simplify scheme. Also, in fact, this is not 100% match of code, but just major pieces which describe the architecture, so, it’s rather 60% of the code, but other 40% in fact almost don’t bring any value, so, I omitted them to make it simple.
 
 Alright, probably you have already noticed many colors on the scheme, each logic item (shape on the scheme) is highlighted in parent module color, it means, for example, ‘methodA’ will be red if it’s called from ‘moduleB’ which is red. Let’s see modules legend for the scheme, it describes module color and path to the file as well.
 
-![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/14364cbd/part-1/images/intro/modules-src-path.svg)
+[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)
 
-<em>1.1 Modules colors</em>
+<em>Intro.1 Modules colors (clickable)</em>
 
 Let’s put them into a scheme to see dependencies between modules.
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/14364cbd/part-1/images/intro/files-scheme.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/14364cbd/part-1/images/intro/files-scheme.svg)
+[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)
 
-<em>1.2 Modules dependencies</em>
+<em>Intro.2 Modules dependencies (clickable)</em>
 
 But, as you probably know, React is built to support many environments. Like mobile (ReactNative), browser (ReactDOM), also Server Rendering and ReactART(for drawing vector graphics using React) etc. So, a number of files actually is bigger than that. We can compare how actually multi-support affects the scheme.
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/14364cbd/part-1/images/intro/modules-per-platform-scheme.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/14364cbd/part-1/images/intro/modules-per-platform-scheme.svg)
+[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)
+
+<em>Intro.3 Platform dependencies (clickable)</em>
 
 So, you can see which parts were changed, it means they have separate implementation per platform. Let’s take something simple, like ReactEventListener, obviously, its implementation will be different for different platforms! Technically, as you can imagine, these platform dependent modules should be somehow injected or connected to the current logic flow, and, in fact, there are many such injectors as well. We omit them to simplify the scheme, there is nothing special in terms of coding, just standard composition pattern.
 
@@ -91,3 +94,7 @@ ReactDOM.render(
     function() {}
 );
 ```
+
+So, we are ready to start, let’s move on to the first part of the scheme. One by one part we will go through all of it.
+
+[To the next page >>](./stack/book/Part-0.md)
