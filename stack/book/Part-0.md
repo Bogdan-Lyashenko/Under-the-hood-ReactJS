@@ -7,10 +7,11 @@ We are gonna talk here about both ReactJS versions, current one with Stack recon
 
 
 ## Stack reconciler
-[![](./stack/images/intro/all-page-stack-reconciler-25-scale.jpg)](./stack/images/intro/all-page-stack-reconciler.svg)
 
-1. [Intro](./stack/book/Intro.md)
-1. [Part 0](./stack/book/Intro.md)
+[![](./part-1/images/intro/all-page-stack-reconciler-25-scale.jpg)](./part-1/images/intro/all-page-stack-reconciler.svg)
+
+1. [Intro](./part-1/book/Intro.md)
+1. [Part 0](./part-1/book/Part-0.md)
 1. ...
 
 
