@@ -1,4 +1,4 @@
-##Part 0
+## Part 0
 
 [![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/0/part-0.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/0/part-0.svg)
 
@@ -64,7 +64,9 @@ So, `TopLevelWrapper` only is created, no more for now. Moving forward. But.. in
 <em> &lt;div&gt; cannot appear as a descendant of &lt;p&gt; </em>.
 
 
-Alright, we’ve finished *Part 0*. Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
+### Alright, we’ve finished *Part 0*.
+
+Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
 
 [![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/0/part-0-A.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/0/part-0-A.svg)
 
@@ -85,6 +87,6 @@ Nice. In fact, that’s all that happens here. So, we can take essential value f
 And then, we have done!
 
 
-[To the next page >>](./stack/book/Part-1.md)
+[To the next page >>](./Part-1.md)
 
-[<< To the previous page](./stack/book/Intro.md)
+[<< To the previous page](./Intro.md)
