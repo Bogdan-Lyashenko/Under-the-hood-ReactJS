@@ -15,7 +15,7 @@ Let’s recap what we get here. Look at the scheme one more time, then, let’s 
 
 <em>N.4 Part N simplified (clickable)</em>
 
-And, propably, let’s fix spaces and alignment as well:
+And, probably, let’s fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)
 

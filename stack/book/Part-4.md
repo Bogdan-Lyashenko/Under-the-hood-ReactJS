@@ -30,13 +30,13 @@ Let’s recap what we get here. Look at the scheme one more time, then, let’s 
 
 <em>4.1 Part 4 simplified (clickable)</em>
 
-And, propably, let’s fix spaces and alignment as well:
+And, probably, let’s fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)
 
 <em>4.2 Part 4 simplified&refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part N*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 4*, it will be used for the final `mounting` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-C.svg)
 

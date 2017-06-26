@@ -75,7 +75,7 @@ Let’s recap what we get here. Look at the scheme one more time, then, let’s 
 
 <em>3.1 Part 3 simplified (clickable)</em>
 
-And, propably, let’s fix spaces and alignment as well:
+And, probably, let’s fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
 

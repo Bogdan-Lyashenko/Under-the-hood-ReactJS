@@ -72,7 +72,7 @@ Let’s recap what we get here. Look at the scheme one more time, then, let’s 
 
 <em>0.4 Part 0 simplified (clickable)</em>
 
-And, propably, let’s fix spaces and alignment as well:
+And, probably, let’s fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-B.svg)
 
