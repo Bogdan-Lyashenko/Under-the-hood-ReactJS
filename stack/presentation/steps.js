@@ -1,4 +1,4 @@
-var SLIDE = 2;
+var SLIDE = 3;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -89,7 +89,7 @@ var STEPS = [{
         x: 300,
         y: 1255,
         w: 1850,
-        h: 700
+        h: 720
     },
 
     scrollTop: 1250,
@@ -105,6 +105,8 @@ var STEPS = [{
         'showDefaultPart',
         {name: 'showCodeOnSidePanel', options: {id: 'transactionReactReconcileTransaction', offset: {}}},
         'resizeAndHideSidePanel',
+        {name: 'showIntFactOnSidePanel', options: {id: 'reactReconciler', offset: {x: 200, y: 150}}},
+        'resizeAndHideSidePanel',
         'showPartA',
         'backToAllScheme',
         'gotoStep'
@@ -115,7 +117,7 @@ var STEPS = [{
         x: 4690,
         y: 990,
         w: 1950,
-        h: 760
+        h: 700
     },
 
     scrollTop: 980,

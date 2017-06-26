@@ -375,6 +375,10 @@
             <a href="https://html.spec.whatwg.org/multipage/parsing.html">https://html.spec.whatwg.org/multipage/parsing.html</a><br/>
     </script>
 
+    <script type="text/template" id="reactReconciler">
+        ReactReconciler module always is called in that cases, when implementation of some logic depends on platform. Mount is different per platform, so ‘main module’ talk to ReactReconciler and ReactReconciler knows what to do next.
+    </script>
+
     <script type="text/template" id="mountingScheme6">
         <ol>
             <li>1) React instansiate ReactCompositeComponent for each your custom component (with component lifecylce hooks like ‘componentWillMount’ etc) and mount it.</li>

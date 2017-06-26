@@ -11,10 +11,17 @@ We are gonna talk here about both ReactJS versions, current one with Stack recon
 ## Stack reconciler
 [![](./stack/images/intro/all-page-stack-reconciler-25-scale.jpg)](./stack/images/intro/all-page-stack-reconciler.svg)
 
-1. [Intro](./stack/book/Intro.md)
-1. [Part 0](./stack/book/Part-0.md)
-1. [Part 1](./stack/book/Part-1.md)
-1. [Part 2](./stack/book/Part-2.md)
+* [Intro](./stack/book/Intro.md)
+* [Part 0](./stack/book/Part-0.md)
+* [Part 1](./stack/book/Part-1.md)
+* [Part 2](./stack/book/Part-2.md)
+* [Part 3](./stack/book/Part-3.md)
+* [Part 4](./stack/book/Part-4.md)
+* [Part 5](./stack/book/Part-5.md)
+* [Part 6](./stack/book/Part-6.md)
+* [Part 7](./stack/book/Part-7.md)
+* [Part 8](./stack/book/Part-8.md)
+* [Part 9](./stack/book/Part-9.md)
 
 
 
