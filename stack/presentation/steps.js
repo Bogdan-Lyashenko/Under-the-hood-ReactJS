@@ -1,4 +1,4 @@
-var SLIDE = 4;
+var SLIDE = 5;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -132,6 +132,8 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
+        {name: 'showTextOnSidePanel', options: {id: 'componentWillMount3', offset: {x: 200, y: 200}}},
+        'resizeAndHideSidePanel',
         {name: 'showCodeOnSidePanel', options: {id: 'willUpdate3', offset: {}}},
         'resizeAndHideSidePanel',
         'showPartA',
@@ -141,10 +143,10 @@ var STEPS = [{
 },{
     part: 4,
     overlay: {
-        x: 6880,
+        x: 6900,
         y: 940,
-        w: 1270,
-        h: 630
+        w: 1290,
+        h: 650
     },
 
     scrollTop: 936,
@@ -158,7 +160,7 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
-        {name: 'showCodeOnSidePanel', options: {id: 'setHtml4', offset: {}}},
+        {name: 'showCodeOnSidePanel', options: {id: 'setHtml4', offset: {x: -100, y: 0}}},
         'resizeAndHideSidePanel',
         'showPartA',
         'backToAllScheme',
