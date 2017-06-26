@@ -1,4 +1,4 @@
-var SLIDE = 3;
+var SLIDE = 4;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
