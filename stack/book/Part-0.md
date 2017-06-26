@@ -87,6 +87,9 @@ Nice. In fact, that’s all that happens here. So, we can take essential value f
 And then, we have done!
 
 
-[To the next page >>](./Part-1.md)
+[To the next page: Part 1 >>](./Part-1.md)
 
-[<< To the previous page](./Intro.md)
+[<< To the previous page: Intro](./Intro.md)
+
+
+[Home](../../README.md)

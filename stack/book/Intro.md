@@ -97,4 +97,7 @@ ReactDOM.render(
 
 So, we are ready to start, let’s move on to the first part of the scheme. One by one part we will go through all of it.
 
-[To the next page >>](./Part-0.md)
+[To the next page: Part 0 >>](./Part-0.md)
+
+
+[Home](../../README.md)

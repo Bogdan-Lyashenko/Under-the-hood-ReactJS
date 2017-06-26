@@ -1,4 +1,4 @@
-var SLIDE = 0;
+var SLIDE = 2;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -12,8 +12,6 @@ var STEPS = [{
         {name: 'resizePanelAndSetImg', options: {img: 'intro/files-scheme.svg'}},
         {name: 'exchangePanelImgs', options: {img: 'intro/modules-per-platform-scheme.svg'}},
         {name: 'resizeAndHideSidePanel', options: {showAllScheme: true}},
-        {name: 'showTextOnSidePanel', options: {id: 'platformsList', offset: {x: 0, y: 0}}},
-        'resizeAndHideSidePanel',
         {name: 'showCodeOnSidePanel', options: {id: 'firstCodeExample', offset: {x: 0, y: 0}}},
         'resizeAndHideSidePanel',
         'gotoStep'
@@ -38,17 +36,17 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
-        'showPartA',
+        {name: 'showTextOnSidePanel', options: {id: 'mountingDescription0', offset: {x: 200, y: 200}}},
+        'resizeAndHideSidePanel',
         {name: 'showHtmlOnSidePanel', options: {id: 'mountingScheme1Small', offset: {x: 200, y: 200}}},
         'resizeAndHideSidePanel',
         {name: 'showHtmlOnSidePanel', options: {id: 'mountingScheme1Big', offset: {x: 200, y: 200}}},
-        'resizeAndHideSidePanel',
-        {name: 'showTextOnSidePanel', options: {id: 'mountingDescription0', offset: {x: 200, y: 200}}},
         'resizeAndHideSidePanel',
         {name: 'showTextOnSidePanel', options: {id: 'jsxToVdom', offset: {x: 200, y: 200}}},
         'resizeAndHideSidePanel',
         {name: 'showIntFactOnSidePanel', options: {id: 'validateDOMNesting', offset: {x: 200, y: 200}}},
         'resizeAndHideSidePanel',
+        'showPartA',
         'backToAllScheme',
         'gotoStep'
     ]
@@ -73,14 +71,13 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
-        {name: 'resizePanelAndSetImg', options: {img: '1/communication-channel.svg', offset: {x: 0, y: 0}}},
-        {name: 'exchangePanelImgs', options: {img: '1/transaction.svg', offset: {x: 0, y: 0}}},
+        {name: 'showHtmlOnSidePanel', options: {id: 'communicationChannel', offset: {x: 200, y: 100}}},
         'resizeAndHideSidePanel',
-        {name: 'showTextOnSidePanel', options: {id: 'transactionSteps', offset: {x: 0, y: 0}}},
+        {name: 'showHtmlOnSidePanel', options: {id: 'transaction', offset: {x: 200, y: 100}}},
         'resizeAndHideSidePanel',
-        {name: 'showTextOnSidePanel', options: {id: 'transactionsInReact', offset: {x: 0, y: 0}}},
+        {name: 'showTextOnSidePanel', options: {id: 'transactionsInReact', offset: {x: 200, y: 100}}},
         'resizeAndHideSidePanel',
-        {name: 'showCodeOnSidePanel', options: {id: 'transactionCodeExample', offset: {x: 0, y: 0}}},
+        {name: 'showCodeOnSidePanel', options: {id: 'transactionCodeExample', offset: {x: 20, y: 20}}},
         'resizeAndHideSidePanel',
         'showPartA',
         'backToAllScheme',

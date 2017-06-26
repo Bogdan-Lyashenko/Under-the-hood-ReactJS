@@ -6,6 +6,7 @@ html, body {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     color: #444;
     background-color: rgb(254, 254, 254);
+    line-height: 1.5;
 }
 #controls {
     position: absolute;
@@ -119,7 +120,7 @@ html, body {
 }
 
 quote {
-    border-left: 7px solid #eee;
+    border-left: 7px solid #ccc;
     display: block;
     color: #555;
     padding-left: 10px;

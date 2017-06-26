@@ -1,3 +1,6 @@
+//Do not read the cole below
+//it will be re-written from the scratch
+//now it just 'work' due to lack of time
 (function () {
     var ALL_PARTS_WIDTH = 9173 + 50, ALL_PARTS_HEIGHT = 3137 + 50;
 
@@ -55,7 +58,9 @@
                 if (typeof actionStep === 'undefined') return;
                 if (!this.isActingDone) return;
 
-                this.gotoStep(+actionStep);
+                this.hidePrevStepSideEffects().then(()=> {
+                    this.gotoStep(+actionStep);
+                });
             });
 
             document.body.addEventListener('keydown', (e) => {
@@ -492,6 +497,27 @@
             return this.setBlockVisibility(view.overlayPieceBottom).then(()=> {
                 this.setDisplayNone(view.overlaysParent);
             });
+        },
+
+        hidePrevStepSideEffects: function () {
+            this.hideOverlays();
+
+            this.hideSlidePanel().then(()=> {
+                this.setSlideContentHtml();
+                this.setSlideContentImg();
+            });
+
+            this.hidePartImage(this.view.imgPartScheme);
+            this.hidePartImage(this.view.imgPartSchemeA);
+
+            this.hidePartImage(this.view.imgPartSchemeB).then(()=> {
+                this.hidePartImageParent();
+                this.scrollPartSchemeTo(null, {scrollLeft: 0, scrollTop: 0});
+            });
+
+            this.showAllSchemeImg();
+
+            return this.delay(1000);
         },
 
         setOverlaysAround: function(opt) {
