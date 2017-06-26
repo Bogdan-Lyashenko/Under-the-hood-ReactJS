@@ -1,4 +1,4 @@
-var SLIDE = 5;
+var SLIDE = 6;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -186,6 +186,8 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
+        {name: 'showTextOnSidePanel', options: {id: 'detectingDifferences5', offset: {x: 200, y: 150}}},
+        'resizeAndHideSidePanel',
         'showPartA',
         'backToAllScheme',
         'gotoStep'
