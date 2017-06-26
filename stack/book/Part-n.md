@@ -1,6 +1,6 @@
 ## Part N
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N.svg)
 
 <em>N.0 Part N (clickable)</em>
 
@@ -11,19 +11,19 @@
 
 Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-A.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-A.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-A.svg)
 
 <em>N.4 Part 1 simplified (clickable)</em>
 
 And, propably, let’s fix spaces and alignment as well:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)
 
 <em>N.5 Part 1 simplified&refactored (clickable)</em>
 
 Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 1*, it will be used for the final `mounting` scheme:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-C.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-C.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-C.svg)
 
 <em>N.6 Part 1 essential value (clickable)</em>
 

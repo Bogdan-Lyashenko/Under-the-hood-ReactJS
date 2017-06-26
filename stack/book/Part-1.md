@@ -1,6 +1,6 @@
 ## Part 1
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1.svg)
 
 <em>1.0 Part 1 (clickable)</em>
 
@@ -13,7 +13,7 @@ What actually helps to handle this pre/post processing? Right, transaction! For 
 Imagine the ‘communication channel’, so, you need to open connection, send the message, close connection. If you send several messages one by one, so, open connection only once, send all pending messages, close connection after.
 
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/communication-channel.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/communication-channel.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/communication-channel.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/communication-channel.svg)
 
 <em>1.1 Very real example of transaction (clickable)</em>
 
@@ -27,7 +27,7 @@ So, the idea is:
 * call transaction method itself
 * call each wrapper.close
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/transaction.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/transaction.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/transaction.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/transaction.svg)
 
 <em>1.2 Transaction implementation (clickable)</em>
 
@@ -68,19 +68,19 @@ Alright, let’s check the method which was wrapped in the transaction, well, in
 
 Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-A.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-A.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-A.svg)
 
 <em>1.3 Part 1 simplified (clickable)</em>
 
 And, propably, let’s fix spaces and alignment as well:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-B.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-B.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-B.svg)
 
 <em>1.4 Part 1 simplified&refactored (clickable)</em>
 
 Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 1*, it will be used for the final `mounting` scheme:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-C.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-C.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-C.svg)
 
 <em>1.5 Part 1 essential value (clickable)</em>
 

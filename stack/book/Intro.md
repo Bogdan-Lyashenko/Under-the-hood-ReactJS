@@ -11,19 +11,19 @@ So.. have a look. Take your time. Of course, overall it looks complex, but in fa
 
 Alright, probably you have already noticed many colors on the scheme, each logic item (shape on the scheme) is highlighted in parent module color, it means, for example, ‘methodA’ will be red if it’s called from ‘moduleB’ which is red. Let’s see modules legend for the scheme, it describes module color and path to the file as well.
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)
 
 <em>Intro.1 Modules colors (clickable)</em>
 
 Let’s put them into a scheme to see dependencies between modules.
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)
 
 <em>Intro.2 Modules dependencies (clickable)</em>
 
 But, as you probably know, React is built to support many environments. Like mobile (ReactNative), browser (ReactDOM), also Server Rendering and ReactART(for drawing vector graphics using React) etc. So, a number of files actually is bigger than that. We can compare how actually multi-support affects the scheme.
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)
 
 <em>Intro.3 Platform dependencies (clickable)</em>
 

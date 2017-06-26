@@ -1,6 +1,6 @@
 ## Part 0
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0.svg)
 
 <em>0.0 Part 0 (clickable)</em>
 
@@ -17,7 +17,7 @@ You can see the module called `ReactMount` (01), it contains the logic of compon
 At least the comment from the code describes it in that way. Well, what that really means? Alright, imagine the next transformation:
 
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-small.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-small.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-small.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-small.svg)
 
 <em>0.1 JSX to HTML (clickable)</em>
 
@@ -25,7 +25,7 @@ React needs to transform your component(s) description into HTML to put in into 
 How to get there? Right, it needs to handle all props, events listeners, nested components, and logic. It’s needed to granulate your high-level description (components)  to really low-level data (HTML) which can be put into a web-page. That is all that mounting is about.
 
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-big.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-big.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-big.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/mounting-scheme-1-big.svg)
 
 <em>0.1 JSX to HTML, extended (clickable)</em>
 
@@ -40,7 +40,7 @@ Alright, let’s continue. But… it’s interesting fact time! Yes, let’s add
 An instance of what should be created (03)? Component… right, but which one? Well, it’s a good point. No, not `<ExampleApllication />` that’s 100% :) We actually should instantiate some internal class.
 Let’s check out the next scheme at first.
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/jsx-to-vdom.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/jsx-to-vdom.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/jsx-to-vdom.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/jsx-to-vdom.svg)
 
 <em>0.3 JSX to VDOM (clickable)</em>
 
@@ -68,19 +68,19 @@ So, `TopLevelWrapper` only is created, no more for now. Moving forward. But.. in
 
 Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-A.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-A.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-A.svg)
 
 <em>0.4 Part 0 simplified (clickable)</em>
 
 And, propably, let’s fix spaces and alignment as well:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-B.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-B.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-B.svg)
 
 <em>0.5 Part 0 simplified&refactored (clickable)</em>
 
 Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 0*, it will be used for the final `mounting` scheme:
 
-[![](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-C.svg)](https://cdn.rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-C.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/part-0-C.svg)
 
 <em>0.6 Part 0 essential value (clickable)</em>
 

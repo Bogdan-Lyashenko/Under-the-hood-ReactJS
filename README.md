@@ -13,7 +13,8 @@ We are gonna talk here about both ReactJS versions, current one with Stack recon
 
 1. [Intro](./stack/book/Intro.md)
 1. [Part 0](./stack/book/Part-0.md)
-1. ...
+1. [Part 1](./stack/book/Part-1.md)
+1. [Part 2](./stack/book/Part-2.md)
 
 
 
