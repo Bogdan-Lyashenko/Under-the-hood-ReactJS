@@ -1,4 +1,4 @@
-var SLIDE = 6+1;
+var SLIDE = 7+1;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -243,7 +243,7 @@ var STEPS = [{
         'showOverlay',
         'showDefaultPart',
         'showPartA',
-        {name: 'scrollPartSchemeTo', options: {scrollLeft: 202, scrollTop: 290}},
+        {name: 'movePartSchemeAbsoluteTo', options: {left: 202, top: 50}},
         'backToAllScheme',
         'gotoStep'
     ]

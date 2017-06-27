@@ -207,6 +207,20 @@
             });
         },
 
+        movePartSchemeAbsoluteTo: function (part, options) {
+            return anime({
+                targets: this.view.imgPartSchemeB,
+
+                top: options.top,
+                left: options.left,
+                duration: 500,
+
+                easing: 'easeInQuad'
+            }).finished.then(()=> {
+                this.isActingDone = true;
+            });
+        },
+
         exchangePanelImgs: function (part, options) {
             return this.hideSlideImg().then(()=> {
                 this.setSlideContentImg(options.img, options.offset);
@@ -309,6 +323,9 @@
 
                 case 'launchMovingParts':
                     return this.launchMovingParts(part, options);
+
+                case 'movePartSchemeAbsoluteTo':
+                    return this.movePartSchemeAbsoluteTo(part, options);
             }
         },
 

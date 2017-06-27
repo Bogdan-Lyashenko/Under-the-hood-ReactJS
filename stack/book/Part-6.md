@@ -11,8 +11,9 @@ Let’s move to children mounting because it’s obviously more interesting.
 
 There is a separate module called `ReactMultiChild`  (`src\renderers\shared\stack\reconciler\ReactMultiChild.js`) to manage children. Nice, let’s check `mountChildren` method then. In contains two main tasks as well. First of all, instantiate children (use `ReactChildReconciler` for that) and mount them. What children actually are here? So, it’s can be simple HTML tag or another custom component, to handle HTML we need to instantiate `ReactDOMComponent` and for custom component - `ReactCompositeComponent`. Mounting flow, again, depends on what the child type is.
 
-If you are still reading this, probably it’s a time to clarify and remind overall process one more time. Let’s take a break and recollect sequence of objects.
+### One more time
 
+If you are still reading this, probably it’s a time to clarify and remind overall process one more time. Let’s take a break and recollect sequence of objects.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/overall-mounting-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/overall-mounting-scheme.svg)
 
