@@ -1,4 +1,4 @@
-var SLIDE = 10+2;
+var SLIDE = 11+2;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -364,7 +364,7 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
-        {name: 'showTextOnSidePanel', options: {id: 'updateMethod11', offset: {}}},
+        {name: 'showTextOnSidePanel', options: {id: 'updateMethod11', offset: {x: 200, y: 100}}},
         'resizeAndHideSidePanel',
         'showPartA',
         'backToAllScheme',
