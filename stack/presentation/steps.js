@@ -1,4 +1,4 @@
-var SLIDE = 13+2;
+var SLIDE = 0;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -441,13 +441,13 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
-        'showPartA',
-        {name: 'resizePanelAndSetImg', options: {img: '14/children-update.svg', offset: {}}},
+        {name: 'showHtmlOnSidePanel', options: {id: 'updating14', offset: {x: 200, y: 100}}},
         'resizeAndHideSidePanel',
         {name: 'showCodeOnSidePanel', options: {id: 'updateConfig14', offset: {}}},
         'resizeAndHideSidePanel',
         {name: 'showCodeOnSidePanel', options: {id: 'domChildrenOperation14', offset: {}}},
         'resizeAndHideSidePanel',
+        'showPartA',
         'backToAllScheme',
         'gotoStep'
     ]
