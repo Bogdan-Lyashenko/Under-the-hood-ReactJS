@@ -1,4 +1,4 @@
-var SLIDE = 6;
+var SLIDE = 6+1;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -212,10 +212,10 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
-        'showPartA',
-        {name: 'resizePanelAndSetImg', options: {img: '6/overall-mounting-scheme.svg', offset: {}}},
+        {name: 'resizePanelAndSetImg', options: {img: '6/overall-mounting-scheme.svg', offset: {x: 0, y: 150}}},
         'resizeAndHideSidePanel',
-        {name: 'showTextOnSidePanel', options: {id: 'mountingScheme6', offset: {}}},
+        {name: 'showTextOnSidePanel', options: {id: 'mountingScheme6', offset: {x: 100, y: 50}}},
+        'showPartA',
         'resizeAndHideSidePanel',
         'backToAllScheme',
         'gotoStep'

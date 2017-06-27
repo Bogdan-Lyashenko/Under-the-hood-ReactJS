@@ -396,15 +396,16 @@
         </quote>
     </script>
 
+    <!-- slide 6 -->
     <script type="text/template" id="mountingScheme6">
-        <ol>
-            <li>1) React instansiate ReactCompositeComponent for each your custom component (with component lifecylce hooks like ‘componentWillMount’ etc) and mount it.</li>
-            <li>2) During mounting, at first, instance of your custom component will be created (constructor called).</li>
-            <li>3) Then, its render method called (let’s take simple case, render returns &lt;div&gt;) and React.createElement creates React elements. It can be called directly or after parsing JSX by Babel and replacing tags in your render. But, it’s not exactly what we need, see next below.</li>
-            <li>4) We need DOM component for our &lt;div&gt;. So, during instansiating process, we create instances of ReactDOMComponent from that element-objects (mentioned above).</li>
-            <li>5) Then, we need to mount DOM component. That actually means create DOM elements, assigning event listeners etc.</li>
-            <li>6) Then, we process initial children of our DOM component. We create instances of them and mount them as well, depends on what each item of children is, custom component or just HTML tag, we recurse to step 1) or step 5) respectevly. And again, for all nested elements.</li>
-        </ol>
+        <ul style="list-style: none; font-size: 20pt; width: 1200px">
+            <li style="padding-bottom: 20px;">1) React instantiate `ReactCompositeComponent` for each your custom component (with component lifecycle hooks like `componentWillMount` etc) and mount it.</li>
+            <li style="padding-bottom: 20px;">2) During mounting, at first, an instance of your custom component will be created (`constructor` called).</li>
+            <li style="padding-bottom: 20px;">3) Then, its render method called (let’s take a simple case, render returns `div`) and `React.createElement` creates React elements. It can be called directly or after parsing JSX by Babel and replacing tags in your render. But, it’s not exactly what we need, see next below.</li>
+            <li style="padding-bottom: 20px;">4) We need DOM component for our `div`. So, during an instantiation process, we create instances of `ReactDOMComponent` from that element-objects (mentioned above).</li>
+            <li style="padding-bottom: 20px;">5) Then, we need to mount DOM component. That actually means create DOM elements, assigning event listeners etc.</li>
+            <li style="padding-bottom: 20px;">6) Then, we process initial children of our DOM component. We create instances of them and mount them as well, depends on what each item of children is, custom component or just HTML tag, we recurse to step 1) or step 5) respectively. And again, for all nested elements.</li>
+        </ul>
     </script>
 
     <script type="text/template" id="synthEvent9">

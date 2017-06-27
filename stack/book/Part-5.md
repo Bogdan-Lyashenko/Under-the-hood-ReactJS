@@ -14,7 +14,7 @@ There are two loops actually, first, by previous `props`, and then, by next `pro
 ### Last `props` loop
 So, the first step, we check if `nextProps` contains the same prop new value, if so, just skip it, because it will be handled later in `nextProps` loop. Then, we reset style values and delete event listeners (if they were set before), remove DOM attributes and DOM properties values. For attributes, make sure there are not one of `RESERVED_PROPS`, it’s actually `prop` like `children` or `dangerouslySetInnerHTML`.
 
-### Next props loop
+### Next `props` loop
 Here, the first step is to check if `prop` was changed, means if next value is different that old one. If no, so, we don’t do anything. For `styles` (as you noticed it’s treated a bit especially) update values that changed since `lastProp`. Then, we put events listeners (yes, exactly that ones, like `onClick` etc). Let’s analyze that with more details. First important thing, across React app all work goes with such named ‘syntetic’ events, well, nothing special, just a few more wrappers for more efficient work. Next thing, the mediator module for managing event listeners is `EventPluginHub` (`src\renderers\shared\stack\event\EventPluginHub.js`). It contains `listenerBank` map for caching and managing all listeners.
 We are going to add our event listeners. But, not straight. The point is, that we should add listeners when component and DOM element is ready for handling events. Seems like we have delayed execution here. But, you will ask probably, how we can know, where that moment happens? Well, it’s time for the next answer! Do you remember we pass `transaction` through all methods and calls? Exactly! Because it can be helpful exactly for such situation. Let’s see the proof in the code:
 
