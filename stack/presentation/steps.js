@@ -1,4 +1,4 @@
-var SLIDE = 9+1;
+var SLIDE = 10+2;
 
 var W_W = window.innerWidth,
     W_H = window.innerHeight;
@@ -311,13 +311,9 @@ var STEPS = [{
         'showOverlay',
         'showDefaultPart',
         'showPartA',
-        {name: 'showIntFactOnSidePanel', options: {id: 'synthEvent9', offset: {}}},
-        'resizeAndHideSidePanel',
         {name: 'showCodeOnSidePanel', options: {id: 'fakeEventCode9', offset: {}}},
         'resizeAndHideSidePanel',
-        {name: 'resizePanelAndSetImg', options: {img: '9/set-state-update-start.svg', offset: {}}},
-        'resizeAndHideSidePanel',
-        {name: 'showTextOnSidePanel', options: {id: 'setStateScheme9', offset: {}}},
+        {name: 'showHtmlOnSidePanel', options: {id: 'setState9', offset: {x: 200, y: 100}}},
         'resizeAndHideSidePanel',
         'backToAllScheme',
         'gotoStep'
