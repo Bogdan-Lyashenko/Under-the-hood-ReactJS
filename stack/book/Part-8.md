@@ -36,7 +36,7 @@ And, probably, let’s fix spaces and alignment as well:
 
 <em>8.2 Part 8 simplified&refactored (clickable)</em>
 
-8ice. In fact, that’s all that happens here. So, we can take essential value from the *Part 8*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 8*, it will be used for the final `mounting` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/8/part-8-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/8/part-8-C.svg)
 

@@ -34,7 +34,7 @@ And, probably, let’s fix spaces and alignment as well:
 
 <em>7.2 Part 7 simplified&refactored (clickable)</em>
 
-7ice. In fact, that’s all that happens here. So, we can take essential value from the *Part 7*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 7*, it will be used for the final `mounting` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/7/part-7-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/7/part-7-C.svg)
 

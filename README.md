@@ -22,6 +22,11 @@ We are gonna talk here about both ReactJS versions, current one with Stack recon
 * [Part 7](./stack/book/Part-7.md)
 * [Part 8](./stack/book/Part-8.md)
 * [Part 9](./stack/book/Part-9.md)
+* [Part 10](./stack/book/Part-10.md)
+* [Part 11](./stack/book/Part-11.md)
+* [Part 12](./stack/book/Part-12.md)
+* [Part 13](./stack/book/Part-13.md)
+* [Part 14](./stack/book/Part-14.md)
 
 
 

@@ -48,7 +48,7 @@ And, probably, let’s fix spaces and alignment as well:
 
 <em>6.3 Part 6 simplified&refactored (clickable)</em>
 
-6ice. In fact, that’s all that happens here. So, we can take essential value from the *Part 6*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 6*, it will be used for the final `mounting` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-C.svg)
 
