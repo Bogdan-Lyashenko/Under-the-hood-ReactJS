@@ -1,38 +1,46 @@
-## Part N
+## Part 11
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11.svg)
 
-<em>N.0 Part N (clickable)</em>
+<em>11.0 Part 11 (clickable)</em>
 
-### Title
+### Update component
 
+Comment in the code which describes the method says:
+>‘Perform an update to a mounted component. The componentWillReceiveProps and shouldComponentUpdate methods are called, then (assuming the update isn't skipped) the remaining update lifecycle methods are called and the DOM representation is updated. By default, this implements React's rendering and reconciliation algorithm. Sophisticated clients may wish to override this.’
 
-### Alright, we’ve finished *Part N*.
+Alright… sounds reasonable.
+
+The first thing we check if `props` (1) were changed, technically, the method `updateComponent` can be called in two different scenarios if `setState` was called or `props` were changed. If `props` were actually changed, then life-cycle method `componentWillReceiveProps` will be called. After, React re-calculate `nextState` (2) based on `pending state queue` (queue of partial state objects which we set before, in our case queue will be like [{message: "click state message"}]). Of course, in the case with just `props` update state will be untouched.
+
+Well, next step, we set `shouldUpdate` to default value `true`(3). That’s actually why when `shouldComponentUpdate` is not specified, a component is updated by default. Then, check if it’s not `force update`. As you know, it’s possible to call `forceUpdate` from component to update it, instead of changing `state` or `props`, but, according to React official docs, using this method is bad practice. So, in a case of force update component will be updated permanently, otherwise, specified from the component method `shouldComponentUpdate` will be called, and `shouldUpdate` will be re-assigned with its result value. If it's determined that a component should not update, React still needs to set `props` and `state` but shortcut the rest of the update.
+
+### Alright, we’ve finished *Part 11*.
 
 Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-A.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-A.svg)
 
-<em>N.4 Part N simplified (clickable)</em>
+<em>11.1 Part 11 simplified (clickable)</em>
 
 And, probably, let’s fix spaces and alignment as well:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-B.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-B.svg)
 
-<em>N.5 Part N simplified&refactored (clickable)</em>
+<em>11.2 Part 11 simplified&refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part N*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 11*, it will be used for the final `mounting` scheme:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/N/part-N-C.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)
 
-<em>N.6 Part N essential value (clickable)</em>
+<em>11.3 Part 11 essential value (clickable)</em>
 
 And then, we have done!
 
 
-[To the next page: Part 2 >>](./Part-2.md)
+[To the next page: Part 12 >>](./Part-12.md)
 
-[<< To the previous page: Part 1](./Part-1.md)
+[<< To the previous page: Part 10](./Part-10.md)
 
 
 [Home](../../README.md)
