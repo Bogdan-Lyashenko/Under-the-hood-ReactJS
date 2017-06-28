@@ -126,3 +126,18 @@ quote {
     padding-left: 10px;
     font-size: 29pt;
 }
+
+#nextAction {
+    position: absolute;
+    padding: 10px;
+    bottom: 20px;
+    right: 3px;
+    color: #e0d7d1;
+    background-color: #5F6364;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}

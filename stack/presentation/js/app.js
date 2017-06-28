@@ -26,6 +26,7 @@
         initView: function() {
             this.view = {
                 controls: document.getElementById('controls'),
+                nextAction: document.getElementById('nextAction'),
 
                 parentAllScheme: document.getElementById('parent-all-scheme'),
                 imgAllScheme: document.getElementById('img-all-scheme'),
@@ -51,10 +52,18 @@
         },
 
         initEventsListeners: function() {
+            this.view.nextAction.addEventListener('click',  (e) => {
+                if (!this.isActingDone) return;
+
+                this.gotoSubStep(this.currentSchemeSubStep + 1);
+            });
+
             this.view.controls.addEventListener('click',  (e) => {
                 var actionStep = e.target.getAttribute('data-action-step');
                 if (typeof actionStep === 'undefined') return;
                 if (!this.isActingDone) return;
+
+                this.highlightStep(+actionStep);
 
                 this.hidePrevStepSideEffects().then(()=> {
                     this.gotoStep(+actionStep);
