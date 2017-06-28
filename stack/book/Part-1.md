@@ -6,9 +6,9 @@
 
 ### Transaction
 
-Well, the component  instance should be somehow connected to React eco-system and, of course, make some influence on it. There is a dedicated module `ReactUpdates` which helps with this. As you know, React performs updates in chunks, it means that it collects operations and performs them together. It’s always better because it allows applying some pre-condition and post-conditions just one for the whole list of items (chunk) instead of doing that for each item.
+Well, the component  instance should be somehow **connected** to React eco-system and, of course, **make some influence** on it. There is a dedicated module `ReactUpdates` which helps with this. As you know, **React performs updates in chunks**, it means that it collects operations and performs them **together**. It’s always better because it allows applying some **pre-condition and post-conditions** just one for the whole list of items (chunk) instead of doing that for each item.
 
-What actually helps to handle this pre/post processing? Right, transaction! For someone it can be a new word, or at least its interpretation for UI needs, so let’s talk a bit more about it and start from the simple example.
+What actually helps to handle this pre/post processing? Right, **transaction**! For someone it can be a new word, or at least its interpretation for UI needs, so let’s talk a bit more about it and start from the simple example.
 
 Imagine the ‘communication channel’, so, you need to open connection, send the message, close connection. If you send several messages one by one, so, open connection only once, send all pending messages, close connection after.
 
@@ -22,7 +22,7 @@ Sounds cool, right.
 
 Moving back to React. Transaction is one widely used pattern inside React. Apart from wrapping behavior, transaction allows to reset transaction flow, block simultaneous execution if a transaction already in progress, etc. There are many different transaction classes, each of them describes specific behavior, but all of them are extended from `Transaction` module. The key difference between `Transaction’s` is specific for exact transaction wrappers list. Wrappers are just an objects contains initialize and close methods.
 
-So, the idea is:
+So, **the idea is**:
 * call each wrapper.initialize and cache returned values (it can be used further)
 * call transaction method itself
 * call each wrapper.close
@@ -32,7 +32,7 @@ So, the idea is:
 <em>1.2 Transaction implementation (clickable)</em>
 
 
-Let’s see some other use cases for transactions in React:
+Let’s see some **other use cases** for transactions in React:
 * Preserving the input selection ranges before/after reconciliation.  Restoring selection even in the event of an unexpected error.
 * Deactivating events while rearranging the DOM, preventing blurs/focuses, while guaranteeing that afterwards, the event system is reactivated.
 * Flushing a queue of collected DOM mutations to the main UI thread after a reconciliation takes place in a worker thread.

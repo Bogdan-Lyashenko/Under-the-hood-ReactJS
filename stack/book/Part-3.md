@@ -9,13 +9,13 @@
 Method `componentMount` is one of the biggest parts of our journey.!
 So, method which is ineteresting for us is `ReactCompositeComponent.mountComponent`(1).
 
-If you remember, I mentioned that the first component which is pushed into components tree is `TopLevelWrapper` (internal React class), so, here, we are gonna to mount it. But.. it’s almost empty wrapper, so, it’s kind of boring to debug it, it doesn’t affect flow at all, so, I suggest to skip it right now and move to its child. That’s how mounting of a tree actually works, you mount parent, then its child and a child of a child and so on. So, just believe me, after `TopLevelWrapper` is mounted, the child of it (`ReactCompositeComponent` which manage `ExampleAppliication` component) will be put into the same phase.
+If you remember, I mentioned that the **first component which is pushed into components tree** is `TopLevelWrapper` (internal React class), so, here, we are gonna to mount it. But.. it’s almost empty wrapper, so, it’s kind of boring to debug it, it doesn’t affect flow at all, so, I suggest to skip it right now and move to its child. That’s how mounting of a tree actually works, you mount parent, then its child and a child of a child and so on. So, just believe me, after `TopLevelWrapper` is mounted, the child of it (`ReactCompositeComponent` which manage `ExampleAppliication` component) will be put into the same phase.
 
 Alright, we are again on step (1). Let’s see what is inside. There are some key actions gonna happen, so let’s discuss this logic with details.
 
 ### Assigning instance updater
 
-That `updater` (2), returned from `transaction.getUpdateQueue()` is actually is `ReactUpdateQueue` module. So, why it’s actually assigned here? Well, because `ReactCompositeComponent` (class we are currently looking on) is one for all platforms, but updaters are different, so we assign it dynamically during mounting depending on platform. Alright. We don’t really need this `updater` for now but keep it in mind, it’s really important `updater`, it will be used soon from well-known component method `setState`.
+That `updater` (2), returned from `transaction.getUpdateQueue()` is actually is `ReactUpdateQueue` module. So, why it’s actually **assigned here**? Well, because `ReactCompositeComponent` (class we are currently looking on) is one for all platforms, but updaters are different, so we assign it dynamically during mounting depending on platform. Alright. We don’t really need this `updater` for now but keep it in mind, it’s really **important `updater`**, it will be used soon from well-known component method **`setState`**.
 
 Well, actually, not only `updater` is assigned to an instance during this phase. Component instance (your custom component) also is extended with `props` and `context`, `refs`.
 
