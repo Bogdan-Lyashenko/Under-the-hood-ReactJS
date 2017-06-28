@@ -112,7 +112,7 @@ And, probably, let’s fix spaces and alignment as well:
 
 <em>14.3 Part 14 simplified&refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 14*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 14*, it will be used for the final `updating` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-C.svg)
 

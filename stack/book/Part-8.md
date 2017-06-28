@@ -6,8 +6,6 @@
 
 ### `this.setState`
 
-Of course, we are not done!
-
 We know how mounting works, but now, let’s go from the another side. Yes, `setState` method, one more piece of cake!
 
 First of all, why we actually can call some method called `setState`? Well, that’s clear enough, we inherited our component from `ReactComponent`. Alright, then, it’s easy to find this class in React source and check its `setState` method.
@@ -36,7 +34,7 @@ And, probably, let’s fix spaces and alignment as well:
 
 <em>8.2 Part 8 simplified&refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 8*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 8*, it will be used for the final `updating` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/8/part-8-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/8/part-8-C.svg)
 

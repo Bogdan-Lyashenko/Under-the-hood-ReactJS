@@ -29,7 +29,7 @@ And, probably, let’s fix spaces and alignment as well:
 
 <em>11.2 Part 11 simplified&refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 11*, it will be used for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 11*, it will be used for the final `updating` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)
 
