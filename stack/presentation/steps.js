@@ -36,6 +36,8 @@ var STEPS = [{
         'scaleAllSchemeAndScrollToPart',
         'showOverlay',
         'showDefaultPart',
+        {name: 'showHtmlOnSidePanel', options: {id: 'firstZoom', offset: {x: 200, y: 0}}},
+        'resizeAndHideSidePanel',
         {name: 'showTextOnSidePanel', options: {id: 'mountingDescription0', offset: {x: 200, y: 200}}},
         'resizeAndHideSidePanel',
         {name: 'showHtmlOnSidePanel', options: {id: 'mountingScheme1Small', offset: {x: 200, y: 200}}},
@@ -261,6 +263,8 @@ var STEPS = [{
             'mounting-c-parts/C-7-mounting-parts.svg'
         ]}},
         'resizeAndHideSidePanel',
+        {name: 'showHtmlOnSidePanel', options: {id: 'mountingDoneGif', offset: {x: 200, y: 150}}},
+        'resizeAndHideSidePanel',
         'gotoStep'
     ]
 },{
@@ -465,6 +469,9 @@ var STEPS = [{
 
         ]}},
         'resizeAndHideSidePanel',
+        {name: 'showHtmlOnSidePanel', options: {id: 'updatingDoneGif', offset: {x: 200, y: 150}}},
+        'resizeAndHideSidePanel',
+        {name: 'scaleAllSchemeTo', options: {allSchemeWidth: W_W}},
         'gotoStep'
     ]
 }];

@@ -7,13 +7,13 @@
     var W_W = window.innerWidth,
         W_H = window.innerHeight;
 
-    var MAX_STEP = 15,
+    var MAX_STEP = 17,
         MAX_SUB_STEP = 4;
 
     var SLIDE_PANEL_WIDTH = 500;
 
     //display none for part img parent, fix scroll
-    var app = {
+    window.presentationAppReactUnderHood = {
         init: function () {
             this.currentSchemeStep = 0;
             this.currentSchemeSubStep = -1;
@@ -21,8 +21,6 @@
 
             this.initView();
             this.initEventsListeners();
-
-            this.gotoStep(SLIDE);
         },
 
         initView: function() {
@@ -82,6 +80,11 @@
 
         gotoStep: function (actionStep = 0) {
             this.currentSchemeStep = actionStep;
+
+            if (this.currentSchemeStep > MAX_STEP) {
+                console.log('end!');
+                return;
+            }
 
             this.highlightStep(this.currentSchemeStep);
 
@@ -604,5 +607,7 @@
 
     };
 
-    app.init();
 })();
+
+
+window.presentationAppReactUnderHood.init();

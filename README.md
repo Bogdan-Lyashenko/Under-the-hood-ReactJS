@@ -11,6 +11,8 @@ We are gonna talk here about both ReactJS versions, current one with Stack recon
 ## Stack reconciler
 [![](./stack/images/intro/all-page-stack-reconciler-25-scale.jpg)](./stack/images/intro/all-page-stack-reconciler.svg)
 
+The entire scheme is divided into 15 parts, let's get started.
+
 * [Intro](./stack/book/Intro.md)
 * [Part 0](./stack/book/Part-0.md)
 * [Part 1](./stack/book/Part-1.md)
@@ -31,4 +33,4 @@ We are gonna talk here about both ReactJS versions, current one with Stack recon
 
 
 ## Fiber
-1. [Intro](./part-2/book/Intro.md)
+1. [Intro](./part-2/book/Intro.md) [TODO]
