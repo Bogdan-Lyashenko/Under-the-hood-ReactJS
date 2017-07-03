@@ -9,7 +9,7 @@
 Method `componentMount` is one of the biggest parts of our journey.!
 So, method which is ineteresting for us is `ReactCompositeComponent.mountComponent`(1).
 
-If you remember, I mentioned that the **first component which is pushed into components tree** is `TopLevelWrapper` (internal React class), so, here, we are gonna to mount it. But.. it’s almost empty wrapper, so, it’s kind of boring to debug it, it doesn’t affect flow at all, so, I suggest to skip it right now and move to its child. That’s how mounting of a tree actually works, you mount parent, then its child and a child of a child and so on. So, just believe me, after `TopLevelWrapper` is mounted, the child of it (`ReactCompositeComponent` which manage `ExampleAppliication` component) will be put into the same phase.
+If you remember, I mentioned that the **first component which is pushed into components tree** is `TopLevelWrapper` (internal React class), so, here, we are gonna to mount it. But.. it’s almost empty wrapper, so, it’s kind of boring to debug it, it doesn’t affect flow at all, so, I suggest to skip it right now and move to its child. That’s how mounting of a tree actually works, you mount parent, then its child and a child of a child and so on. So, just believe me, after `TopLevelWrapper` is mounted, the child of it (`ReactCompositeComponent` which manage `ExampleApplication` component) will be put into the same phase.
 
 Alright, we are again on step (1). Let’s see what is inside. There are some key actions gonna happen, so let’s discuss this logic with details.
 
@@ -35,7 +35,7 @@ So, then you can access `props` in your code from an instance, like `this.props`
 
 ### Create ExampleApplication instance
 
-By calling `_constructComponent` (3) and through several construction methods finally, `new ExampleAppliication()` will be created. That’s a point when constructor from our code will be called. So, first time actually our code was touched from React’s ecosystem. Nice.
+By calling `_constructComponent` (3) and through several construction methods finally, `new ExampleApplication()` will be created. That’s a point when constructor from our code will be called. So, first time actually our code was touched from React’s ecosystem. Nice.
 
 ### Perform initial mount
 
