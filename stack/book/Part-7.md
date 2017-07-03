@@ -6,7 +6,7 @@
 
 ### Back to the beginning
 
-After mounting as result of method execution we have HTML elements which are ready to be set into a document. Actually, `markup` (1), generated but `mountComponent`, despite how it’s named, not actually HTML markup, it’s a data structure with fields `children`, `node` (actually DOM node), etc. But, we have our HTML element to put into the container (that one, specified as the container in `ReactDOM.rener` call). While putting it into DOM, React will erase everything that was there before. `DOMLazyTree`(2) is utils class to perform some operations with tree data structures, which we actually do during work with DOM.
+After mounting as result of method execution we have HTML elements which are ready to be set into a document. Actually, `markup` (1), generated but `mountComponent`, despite how it’s named, not actually HTML markup, it’s a data structure with fields `children`, `node` (actually DOM node), etc. But, we have our HTML element to put into the container (that one, specified as the container in `ReactDOM.render` call). While putting it into DOM, React will erase everything that was there before. `DOMLazyTree`(2) is utils class to perform some operations with tree data structures, which we actually do during work with DOM.
 
 So, in the end, the last thing `parentNode.insertBefore(tree.node)`(3). Where `parentNode` is container `div` node and `tree.node` is actually our `ExampleAppliication` div node. Nice, HTML elements created during mounting finally were inserted into document.
 
