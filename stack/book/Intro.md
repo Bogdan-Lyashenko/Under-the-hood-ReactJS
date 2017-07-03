@@ -34,7 +34,7 @@ Let’s learn the logic flow for **React DOM in a regular browser**. It’s the 
 
 ### Code sample
 
-What is the best way to learn code? Right, read and debug the code. Alright, we are gonna to debug **two processes**: **ReactDOM.render** and **component.setState**, which map on mount and update. Let’s check the code we can write for a start. What do we need? Probably several small components with simple renders, so it will be easier to debug.
+What is the best way to learn the code of a framework or library? That's right, read and debug the code. Alright, we are gonna to debug **two processes**: **ReactDOM.render** and **component.setState**, which map on mount and update. Let’s check the code we can write for a start. What do we need? Probably several small components with simple renders, so it will be easier to debug.
 
 ```javascript
 class ChildCmp extends React.Component {
