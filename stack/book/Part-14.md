@@ -18,7 +18,7 @@ So, the first iteration with `ExampleApplication children`. Obviously, type of c
 
 <em>14.1 Children update (clickable)</em>
 
-So, the second iteration, we process `button`, it will be the simple case, because the type of button `children` is just ‘text’, because button contains only title ‘set state button’. Then we check if the previous text is the same as now, alright, the text was not changed, so we don’t need to update `button` then? Fair enough. So, ‘VitualDOM things’ in action. Now it doesn’t sound so abstractive, React maintenance internal representation of DOM and touch real DOM only if it’s required. Excellent performance as result.
+So, the second iteration, we process `button`, it will be the simple case, because the type of button `children` is just ‘text’, because button contains only title ‘set state button’. Then we check if the previous text is the same as now, alright, the text was not changed, so we don’t need to update `button` then? Fair enough. So, ‘VirtualDOM things’ in action. Now it doesn’t sound so abstractive, React maintenance internal representation of DOM and touch real DOM only if it’s required. Excellent performance as result.
 So, I think you’ve already got the idea, then we put `ChildCmp` for  update, and its children till reach the lowest level items (content) and be able to update it. Its content is modified actually, you remember that `this.props.message` is updated with 'click state message' via `click` and `setState` call.
 
 ```javascript
@@ -35,7 +35,7 @@ render() {
 
 ```
 
-So, let’s see. We are gonna to update the content of the element, in fact - replace it. Well, what update actually is? So, it’s kind of configuration object wich will be parsed and the configured action will be applied. For our case with text update it looks like:
+So, let’s see. We are gonna to update the content of the element, in fact - replace it. Well, what update actually is? So, it’s kind of configuration object which will be parsed and the configured action will be applied. For our case with text update it looks like:
 
 ```javascript
 {

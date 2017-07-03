@@ -32,7 +32,7 @@ If you are still reading this, probably it’s a time to clarify and remind over
 6) Then, we process initial children of our DOM component. We create instances of them and mount them as well, depends on what each item of children is, custom component or just HTML tag, we recurse to step 1) or step 5) respectively. And again, for all nested elements.
 
 That’s it. Pretty straightforward as you can see.
-So, mounting is finished. Enque `componentDidMount` method then! Great job.
+So, mounting is finished. Enqueue `componentDidMount` method then! Great job.
 
 ### Alright, we’ve finished *Part 6*.
 
