@@ -37,7 +37,7 @@ Alright, let’s continue. But… it’s interesting fact time! Yes, let’s add
 
 ### Instantiate React component
 
-An **instance** of what should be created (03)? Component… right, but which one? Well, it’s a good point. No, not `<ExampleApplication />` that’s 100% :) We actually should instantiate some internal class.
+Look at the scheme, there is an instance creation by number (03). Well, it's too early create an instance of `<ExampleApplication />` here, in fact, we instantiate `TopLevelWrapper` (internal React class).
 Let’s check out the next scheme at first.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/jsx-to-vdom.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/0/jsx-to-vdom.svg)

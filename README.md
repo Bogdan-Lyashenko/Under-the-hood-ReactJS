@@ -35,4 +35,4 @@ The entire scheme is divided into 15 parts, let's get started.
 
 
 ## Fiber
-1. [Intro](./part-2/book/Intro.md) [TODO]
+1. [Intro](./fiber/book/Intro.md) [TODO]
