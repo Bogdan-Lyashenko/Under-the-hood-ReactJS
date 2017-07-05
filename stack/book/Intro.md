@@ -7,29 +7,36 @@
 
 <em>Intro.0 All scheme (clickable)</em>
 
-So.. have a look. Take your time. Of course, overall it looks complex, but in fact, it describes only two processes: mount and update. I skip unmount because it’s kind of ‘reversed mount’, so, I’ve just decided to simplify scheme. Also, in fact, **this is not 100%** match of code, but just major pieces which describe the architecture, so, it’s rather 60% of the code, but other 40% in fact almost don’t bring any value, so, I omitted them to make it simple.
+So...have a look. Take your time. Overall it looks complex, but in fact, it describes only two processes: mount and update. I skipped unmount because it’s kind of ‘reversed mount’ and removing it simplified the scheme. Also, **this is not a 100%** match of the code, but only major pieces which describe the architecture. In total, it’s about 60% of the code, but the other 40% would bring little visual value. So again, for simplicity, I omitted it.
 
-Alright, probably you have already noticed many colors on the scheme, each logic item (shape on the scheme) is highlighted in parent module color, it means, for example, ‘methodA’ will be red if it’s called from ‘moduleB’ which is red. Let’s see modules legend for the scheme, it describes module color and path to the file as well.
+On first look, you probably noticed many colors on the scheme. Each logic item (shape on the scheme) is highlighted in its parent module's color. For example, ‘methodA’ will be red if it’s called from ‘moduleB’, which is red. Below is a legend for the modules in the scheme along with the path to each file.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)
 
 <em>Intro.1 Modules colors (clickable)</em>
 
-Let’s put them into a scheme to see **dependencies between modules**.
+Let’s put them into a scheme to see the **dependencies between modules**.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)
 
 <em>Intro.2 Modules dependencies (clickable)</em>
 
-But, as you probably know, React is built to **support many environments**. Like mobile (**ReactNative**), browser (**ReactDOM**), also **Server Rendering** and **ReactART**(for drawing vector graphics using React) etc. So, a number of files actually is bigger than that. We can compare how actually multi-support affects the scheme.
+As you probably know, React is built to **support many environments**. 
+- Mobile (**ReactNative**)
+- Browser (**ReactDOM**)
+- Server Rendering
+- **ReactART** (for drawing vector graphics using React)
+- etc.
+
+As a result, a number of files are actually bigger than it looks in the scheme above. Below is the same scheme with multi-support included.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)
 
 <em>Intro.3 Platform dependencies (clickable)</em>
 
-So, you can see which parts were changed, it means they have separate implementation per platform. Let’s take something simple, like ReactEventListener, obviously, its implementation will be different for different platforms! Technically, as you can imagine, these platform dependent modules should be somehow injected or connected to the current logic flow, and, in fact, there are many such injectors as well. We omit them to simplify the scheme, there is nothing special in terms of coding, just standard composition pattern.
+As you can see, some items seem doubled. It shows they have a separate implementation for each platform. Let’s take something simple, like ReactEventListener. Obviously, its implementation will be different for different platforms! Technically, as you can imagine, these platform dependent modules should be somehow injected or connected to the current logic flow, and, in fact, there are many such injectors. Because their usage is part of a standard composition pattern, I chose to omit them. Again, for simplicity.
 
-Let’s learn the logic flow for **React DOM in a regular browser**. It’s the most used one, and it completely covers all React’s architecture ideas, so, fair enough!
+Let’s learn the logic flow for **React DOM in a regular browser**. It’s the most used one, and it completely covers all React’s architecture ideas. So, fair enough!
 
 
 ### Code sample
