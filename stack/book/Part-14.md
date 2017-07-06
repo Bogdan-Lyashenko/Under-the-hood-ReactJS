@@ -100,25 +100,25 @@ Looks like we are done. Completely.
 
 ### Alright, we’ve finished *Part 14*.
 
-Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
+Let’s recap how we got here. Let's look at the scheme one more time, then remove redundant less important pieces, and it becomes this:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-A.svg)
 
 <em>14.2 Part 14 simplified (clickable)</em>
 
-And, probably, let’s fix spaces and alignment as well:
+And we should probably fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-B.svg)
 
-<em>14.3 Part 14 simplified&refactored (clickable)</em>
+<em>14.3 Part 14 simplified & refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 14*, it will be used for the final `updating` scheme:
+Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 14* and use it for the final `updating` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/part-14-C.svg)
 
 <em>14.4 Part 14 essential value (clickable)</em>
 
-And then, we have done! In fact, we have done with updating. Let's see below!
+And then we're done! In fact, we're done with updating. Let's see it below!
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/updating-parts-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/14/updating-parts-C.svg)
 
