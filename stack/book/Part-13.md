@@ -20,7 +20,7 @@ And we should probably fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-B.svg)
 
-<em>13.2 Part 13 simplified&refactored (clickable)</em>
+<em>13.2 Part 13 simplified & refactored (clickable)</em>
 
 Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 13* and use it for the final `updating` scheme:
 

@@ -46,7 +46,7 @@ And we should probably fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-B.svg)
 
-<em>6.3 Part 6 simplified&refactored (clickable)</em>
+<em>6.3 Part 6 simplified & refactored (clickable)</em>
 
 Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 6* and use it for the final `mounting` scheme:
 

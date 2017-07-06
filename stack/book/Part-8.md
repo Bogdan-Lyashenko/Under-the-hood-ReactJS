@@ -32,7 +32,7 @@ And we should probably fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/8/part-8-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/8/part-8-B.svg)
 
-<em>8.2 Part 8 simplified&refactored (clickable)</em>
+<em>8.2 Part 8 simplified & refactored (clickable)</em>
 
 Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 8* and use it for the final `updating` scheme:
 

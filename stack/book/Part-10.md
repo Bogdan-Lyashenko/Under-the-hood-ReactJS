@@ -49,7 +49,7 @@ And we should probably fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-B.svg)
 
-<em>10.2 Part 10 simplified&refactored (clickable)</em>
+<em>10.2 Part 10 simplified & refactored (clickable)</em>
 
 Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 10* and use it for the final `updating` scheme:
 
