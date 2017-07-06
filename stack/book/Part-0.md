@@ -33,7 +33,7 @@ Alright, let’s continue. But… it’s interesting fact time! Yes, let’s add
 
 >  Interesting fact: Ensure that scroll is monitoring (02)
 
-> Funny thing, during the first rendering of root component, React init scroll listeners and caches scroll values so that application code can access them without triggering reflows. Due to browser render implementation, actually, some DOM values are not static, they are calculated each time when you use them from code, it affects the performance of course. In fact, it’s only for older browsers, which don’t support pageX, pageY.  Reacts tries to optimize this as well. Nice. As you can see, to make a fast tool requires a bunch of techniques to be used, this one with the scroll is a good example.
+> Funny thing, during the first rendering of root component, React init scroll listeners and caches scroll values so that application code can access them without triggering reflows. Due to browser render implementation, actually, some DOM values are not static, they are calculated each time when you use them from code, it affects the performance of course. In fact, it’s only for older browsers, which don’t support pageX, pageY.  React tries to optimize this as well. Nice. As you can see, to make a fast tool requires a bunch of techniques to be used, this one with the scroll is a good example.
 
 ### Instantiate React component
 
