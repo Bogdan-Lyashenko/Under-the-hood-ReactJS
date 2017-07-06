@@ -10,25 +10,25 @@ Well, through `ReactReconciler.receiveComponent` React actually calls `receiveCo
 
 ### Alright, we’ve finished *Part 13*. That was a short one.)
 
-Let’s recap what we get here. Look at the scheme one more time, then, let’s remove redundant less important pieces, so it becomes like that:
+Let’s recap how we got here. Let's look at the scheme one more time, then remove redundant less important pieces, and it becomes this:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-A.svg)
 
 <em>13.1 Part 13 simplified (clickable)</em>
 
-And, probably, let’s fix spaces and alignment as well:
+And we should probably fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-B.svg)
 
 <em>13.2 Part 13 simplified&refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take essential value from the *Part 13*, it will be used for the final `updating` scheme:
+Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 13* and use it for the final `updating` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/13/part-13-C.svg)
 
 <em>13.3 Part 13 essential value (clickable)</em>
 
-And then, we have done!
+And then we're done!
 
 
 [To the next page: Part 14 >>](./Part-14.md)

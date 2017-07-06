@@ -7,9 +7,9 @@
 
 <em>Intro.0 All scheme (clickable)</em>
 
-So... have a look. Take your time. Overall it looks complex, but in fact, it describes only two processes: mount and update. I skipped unmount because it’s kind of ‘reversed mount’ and removing it simplified the scheme. Also, **this is not a 100%** match of the code, but only major pieces which describe the architecture. In total, it’s about 60% of the code, but the other 40% would bring little visual value. So again, for simplicity, I omitted it.
+So... have a look. Take your time. Overall it looks complex, but in fact, it describes only two processes: mount and update. I skipped unmount because it’s kind of a "reversed mount" and removing it simplified the scheme. Also, **this is not a 100%** match of the code, but only major pieces which describe the architecture. In total, it’s about 60% of the code, but the other 40% would bring little visual value. So again, for simplicity, I omitted it.
 
-On first look, you probably noticed many colors in the scheme. Each logic item (shape on the scheme) is highlighted in its parent module's color. For example, ‘methodA’ will be red if it’s called from ‘moduleB’, which is red. Below is a legend for the modules in the scheme along with the path to each file.
+On first look, you probably noticed many colors in the scheme. Each logic item (shape on the scheme) is highlighted in its parent module's color. For example, `methodA` will be red if it’s called from `moduleB`, which is red. Below is a legend for the modules in the scheme along with the path to each file.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)
 
