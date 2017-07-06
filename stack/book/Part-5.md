@@ -6,17 +6,19 @@
 
 ### Update DOM properties
 
-Alright, that looks scary, right? The main idea is to apply diff of previous and new `props` efficiently. Look at the method comment in the code:
+Alright, that looks scary, right? The main idea is to apply the diff of previous and new `props` efficiently. Look at the method comment in the code:
 > “Reconciles the properties by detecting differences in property values and updating the DOM as necessary. This function is probably the single most critical path for performance optimization.”
 
-There are two loops actually, first, by previous `props`, and then, by next `props`. In our case, with mounting, `lastProps` (previous) is empty (obviously, it’s the first time when we assign props), but, still, let see what’s going on here.
+There are two loops actually. First, through previous `props` and then, through next `props`. In our case, with mounting, `lastProps` (previous) is empty (obviously, it’s the first time when we assign props), but still, let see what’s going on here.
 
 ### Last `props` loop
-So, the first step, we check if `nextProps` contains the same prop new value, if so, just skip it, because it will be handled later in `nextProps` loop. Then, we reset style values and delete event listeners (if they were set before), remove DOM attributes and DOM properties values. For attributes, make sure there are not one of `RESERVED_PROPS`, it’s actually `prop` like `children` or `dangerouslySetInnerHTML`.
+In the first step, we check if `nextProps` contains the same prop value. If so, we just skip it, because it will be handled later in the `nextProps` loop. Then, we reset style values, delete event listeners (if they were set before), and remove DOM attribute and DOM properties values. For attributes, we make sure they are not one of the `RESERVED_PROPS`, that it's actually `prop`, like `children` or `dangerouslySetInnerHTML`.
 
 ### Next `props` loop
-Here, the first step is to check if `prop` was changed, means if next value is different that old one. If no, so, we don’t do anything. For `styles` (as you noticed it’s treated a bit especially) update values that changed since `lastProp`. Then, we put events listeners (yes, exactly that ones, like `onClick` etc). Let’s analyze that with more details. First important thing, across React app all work goes with such named ‘syntetic’ events, well, nothing special, just a few more wrappers for more efficient work. Next thing, the mediator module for managing event listeners is `EventPluginHub` (`src\renderers\shared\stack\event\EventPluginHub.js`). It contains `listenerBank` map for caching and managing all listeners.
-We are going to add our event listeners. But, not straight. The point is, that we should add listeners when component and DOM element is ready for handling events. Seems like we have delayed execution here. But, you will ask probably, how we can know, where that moment happens? Well, it’s time for the next answer! Do you remember we pass `transaction` through all methods and calls? Exactly! Because it can be helpful exactly for such situation. Let’s see the proof in the code:
+Here, the first step is to check if `prop` was changed, meaning if the next value is different than the old one. If not, we don’t do anything. For `styles`, (you might have noticed it’s treated a bit special) we update values that have changed since `lastProp`. Then, we add the events listeners (yes, exactly the ones like `onClick`, etc). Let’s analyze that with more details.
+
+The important thing is, across the React app, all work is passed through named ‘syntetic’ events. Nothing is special, it's just a few more wrappers for more efficient work. Next thing, the mediator module for managing event listeners is `EventPluginHub` (`src\renderers\shared\stack\event\EventPluginHub.js`). It contains a `listenerBank` map for caching and managing all listeners.
+We are going to add our event listeners, but not right away. The point is, that we should add listeners when the component and DOM element is ready for handling events. Seems like we have delayed execution here, but you will probably ask, how can we know when that moment happens? Well, it’s time for the next answer! Do you remember when we passed `transaction` through all of the methods and calls? Exactly! We did that because it can be helpful exactly for such a situation. Let’s see the proof in the code:
 
 ```javascript
 //src\renderers\dom\shared\ReactDOMComponent.js#222
@@ -27,10 +29,11 @@ transaction.getReactMountReady().enqueue(putListener, {
 });
 ```
 
-Okay, after event listeners we set DOM attributes and DOM properties values. Same as before, for attributes, make sure there are not one of `RESERVED_PROPS, it’s actually `prop` like `children` or `dangerouslySetInnerHTML`.
+Okay, after the event listeners, we set DOM attribute and DOM property values. Same as before, for attributes we make sure they are not one of the `RESERVED_PROPS`, that it’s actually `prop`, like `children` or `dangerouslySetInnerHTML`.
 
-During processing last and next props we computed `styleUpdates` config and pass it now to `CSSPropertyOperations` module.
-Well, and we’ve finished with properties updating. Let’s move on.
+During the processing of the last and next props, we computed the `styleUpdates` config and now pass it to the `CSSPropertyOperations` module.
+
+Well, we’ve finished updating the properties. Let’s move on.
 
 ### Alright, we’ve finished *Part 5*.
 
