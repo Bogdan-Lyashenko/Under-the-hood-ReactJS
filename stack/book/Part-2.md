@@ -6,7 +6,7 @@
 
 ### One more transaction
 
-This time it’s `ReactReconcileTransaction`. As you already know, the major thing what is interesting for us is transaction wrappers. There are three wrappers:
+This time it’s `ReactReconcileTransaction`. As you already know, the major thing that is interesting to us is transaction wrappers. There are three wrappers:
 
 ```javascript
 //\src\renderers\dom\client\ReactReconcileTransaction.js#89
@@ -17,13 +17,13 @@ var TRANSACTION_WRAPPERS = [
 ];
 ```
 
-And, as we can see these wrappers are used mostly to **keep state actual**, lock some changeable values before method call and release after. So, React ensures that, for example, the selection range (currently selected text input) is not disturbed by performing the transaction (get selected on `initialize` and restore on `close`). Also, suppresses events (blur/focus) that could be inadvertently dispatched due to high-level DOM manipulations (like temporarily removing a text input from the DOM), so **disable `ReactBrowserEventEmitter`** on `initialize` and enable on `close`.
+As we can see these wrappers are used mostly to **keep the actual state**, lock some changeable values before method calls, and release them after. So, React ensures that, for example, the selection range (currently selected text input) is not disturbed by performing the transaction (get selected on `initialize` and restore on `close`). Also, it suppresses events (blur/focus) that could be inadvertently dispatched due to high-level DOM manipulations (like temporarily removing a text input from the DOM) so it **disables `ReactBrowserEventEmitter`** on `initialize` and enables on `close`.
 
-Well, we are really close to starting component mount, which will return us markup ready to put into DOM.
-Actually, `ReactReconciler.mountComponent` just wrapper, or, it will be correct to say ‘mediator’, it delegates method mounting to component module, the important moment is here, let’s highlight:
-> `ReactReconciler` module always is called in that cases, when implementation of some logic **depends on platform**, like this exact case. Mount is different per platform, so ‘main module’ talk to `ReactReconciler` and `ReactReconciler` knows what to do next.
+Well, we are really close to starting the component mount, which will return us markup ready to put into DOM. Actually, `ReactReconciler.mountComponent` is just wrapper, or, it's more correct to say ‘mediator’. It delegates method mounting to component modules. This is an important moment, so let’s highlight:
 
-Alright, move on to component’s method `mountComponent`. That’s exactly that method you probably have already heard about. It initializes the component, renders markup, and registers event listeners.  You see, so long way and we finally see a component mounting call. After calling mount we should get actually HTML elements which can be put into the document.
+> `ReactReconciler` module is always called in cases when implementation of some logic **depends on platform**, like this exact case. Mount is different per platform, so the ‘main module’ talks to `ReactReconciler` and `ReactReconciler` knows what to do next.
+
+Alright, let's move on to the component’s method `mountComponent`. It's probably the method you have already heard about. It initializes the component, renders markup, and registers event listeners.  You see, a long way through and we finally see a component mounting call. After calling mount, we should get actual HTML elements which can be put into the document.
 
 
 ### Alright, we’ve finished *Part 2*.
