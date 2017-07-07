@@ -21,7 +21,7 @@ The important thing is, across the React app, all work is passed through named �
 We are going to add our event listeners, but not right away. The point is, that we should add listeners when the component and DOM element is ready for handling events. Seems like we have delayed execution here, but you will probably ask, how can we know when that moment happens? Well, it’s time for the next answer! Do you remember when we passed `transaction` through all of the methods and calls? Exactly! We did that because it can be helpful exactly for such a situation. Let’s see the proof in the code:
 
 ```javascript
-//src\renderers\dom\shared\ReactDOMComponent.js#222
+///src/renderers/dom/stack/client/ReactDOMComponent.js
 transaction.getReactMountReady().enqueue(putListener, {
     inst: inst,
     registrationName: registrationName,

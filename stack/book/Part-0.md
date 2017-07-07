@@ -49,7 +49,7 @@ Internal components? Well, that’s interesting. You’ve already heard about **
 
 OK, let’s finish with our instantiating here. We will create an instance of `ReactCompositeComponent`, but, in fact, it’s not because we put  `<ExampleApplication/>` in `ReactDOM.render`. React always starts rendering a component's tree from `TopLevelWrapper`. It’s almost an idle wrapper, its `render` (render method of a component) will later return `<ExampleApplication />`, that’s it.
 ```javascript
-//src\renderers\dom\client\ReactMount.js#277
+//src/renderers/dom/stack/client/ReactMount.js
 TopLevelWrapper.prototype.render = function () {
   return this.props.child;
 };
