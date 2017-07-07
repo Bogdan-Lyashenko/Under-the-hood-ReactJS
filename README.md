@@ -7,7 +7,7 @@
 
 Each scheme is clickable and can be opened in a new tab, use that to zoom it and be able to read from it. Keep the article and a scheme you are reading about at that moment in separate windows (tabs), that will help to match text and code flow easier.
 
-We are gonna talk here about both ReactJS versions, current one with Stack reconciler and the next one with Fiber (as you probably know, the next version of ReactJS will be released soon), so, you can understand better how current React works and appreciate huge achievements on React-Fiber.  We use React v15.4.2 for explaining how ‘legacy React’ works and React v16.*.*** for ‘Fiber’. Let’s start from old (I have fun to say that) stack version.
+We are gonna talk here about both ReactJS versions, current one with Stack reconciler and the next one with Fiber (as you probably know, the next version of ReactJS will be released soon), so, you can understand better how current React works and appreciate huge achievements on React-Fiber.  We use [React v15.4.2](https://github.com/facebook/react/tree/v15.4.2) for explaining how ‘legacy React’ works and React v16.*.*** for ‘Fiber’. Let’s start from old (I have fun to say that) stack version.
 
 
 ## Stack reconciler
