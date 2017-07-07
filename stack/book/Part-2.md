@@ -9,7 +9,7 @@
 This time it’s `ReactReconcileTransaction`. As you already know, the major thing that is interesting to us is transaction wrappers. There are three wrappers:
 
 ```javascript
-//\src\renderers\dom\client\ReactReconcileTransaction.js#89
+///src/renderers/dom/stack/client/ReactReconcileTransaction.js
 var TRANSACTION_WRAPPERS = [
   SELECTION_RESTORATION,
   EVENT_SUPPRESSION,
