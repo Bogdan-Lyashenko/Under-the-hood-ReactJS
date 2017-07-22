@@ -3,7 +3,7 @@
 ### 스키마 처음보기
 
 
-[![](../images/intro/all-page-stack-reconciler-25-scale.jpg)](../images/intro/all-page-stack-reconciler.svg)
+[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/all-page-stack-reconciler-25-scale.jpg)](../images/intro/all-page-stack-reconciler.svg)
 
 <em>인트로.0 모든 스키마 (클릭 가능)</em>
 

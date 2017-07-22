@@ -4,12 +4,12 @@
 
 <em>4.0 파트 4 (클릭 가능)</em>
 
-### Child 마운팅
+### 자식 마운팅
 
 `mount` 메소드를 계속 알아보도록 합시다.
 
 `_tag`에 video, form, textarea 등과 같은 'complex'태그(1)가 포함되어 있으면 추가 래핑이 필요합니다. `audio` 태그의 'volumechange'와 같은 이벤트에 대한 이벤트 리스너를 추가하거나 `select`, `textarea`와 같은 태그의 기본 동작을 래핑합니다.
-`ReactDOMSelect`, `ReactDOMTextarea`(src\renderers\dom\client\wrappers\ 폴더 내부)과 같은 elements를 위한 래퍼가 있습니다. 우리의 경우에는 단지 `div`이고, 추가 처리는 없습니다.
+`ReactDOMSelect`, `ReactDOMTextarea`(src\renderers\dom\client\wrappers\ 폴더 내부)과 같은 엘리먼트를 위한 래퍼가 있습니다. 이 경우는 단지 `div`이고, 추가 처리는 없습니다.
 
 ### Props 유효성 검사
 
@@ -17,9 +17,9 @@
 
 > `props.dangerouslySetInnerHTML`는 `{__html : ...}`형식이어야 합니다. 자세한 내용은 https://fb.me/react-invariant-dangerously-set-inner-html에서 확인하십시오.
 
-### HTML element 생성 
+### HTML 엘리먼트 생성 
 
-그런 다음 실제 HTML 요소는 `document.createElement`에 의해 생성됩니다(3). 그러면 실제 HTML `div`가 인스턴스화됩니다. 우리가 가상 표현으로 만 작업하기 전에는 처음으로 가상 표현을 볼 수 있습니다. 우리가 가상 표현으로 작업하기 전에 처음으로 가상 표현을 볼 수 있습니다.
+그런 다음 실제 HTML 엘리먼트는 `document.createElement`에 의해 생성됩니다(3). 그러면 실제 HTML `div`가 인스턴스화됩니다. 이전에 우리는 가상 표현으로만 작업했지만 이제는 처음으로 그것을 볼 수 있게 되었습니다.
 
 
 ### 좋습니다, 이제 우리는 *파트 4*를 끝냈습니다.
