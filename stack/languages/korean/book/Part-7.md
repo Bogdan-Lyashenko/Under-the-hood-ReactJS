@@ -34,7 +34,7 @@
 
 <em>7.2 간단히 보는 파트 7 리펙토링 버전 (클릭 가능)</em>
 
-좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 6*에서 필수 가치를 취할 수 있고 그것을 최종 `mounting` 스키마에 사용할 수 있습니다.
+좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 7*에서 필수 가치를 취할 수 있고 그것을 최종 `mounting` 스키마에 사용할 수 있습니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/7/part-7-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/7/part-7-C.svg)
 

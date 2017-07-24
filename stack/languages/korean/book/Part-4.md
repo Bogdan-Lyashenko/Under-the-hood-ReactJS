@@ -28,13 +28,13 @@
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-A.svg)
 
-<em>4.1 파트 4 단순화 (클릭 가능)</em>
+<em>4.1 간단히 보는 파트 4 (클릭 가능)</em>
 
 우리는 공백하고 정렬 부분도 고쳐야 할것 같습니다:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)
 
-<em>4.2 파트 4 단순화 & 리펙토링 (클릭 가능)</em>
+<em>4.2 간단히 보는 파트 4 리펙토링 버전 (클릭 가능)</em>
 
 멋집니다. 사실 이게 여기서 일어나는 일 전부 입니다. 이제 우리는 *파트 4*에서 필수적인 가치를 취할 수 있고 그것을 최종 mounting 스키마로 사용할 수 있습니다:
 
@@ -45,7 +45,7 @@
 그리고 이제 우리는 해냈습니다!
 
 
-[다음 페이지 : 파트 4 >>](./Part-5.md)
+[다음 페이지 : 파트 5 >>](./Part-5.md)
 
 [<< 이전 페이지 : 파트 3](./Part-3.md)
 

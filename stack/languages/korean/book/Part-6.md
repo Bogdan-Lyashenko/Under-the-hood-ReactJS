@@ -4,9 +4,9 @@
 
 <em>6.0 파트 6 (클릭 가능)</em>
 
-### 초기 자식들(children) 생성
+### 초기 자식(children) 생성
 
-요소가 완성된 것처럼 보입니다, 그러니 이제 이 자식들과 함께할 수 있습니다. 여기 두 단계가 있습니다. 자식들은 (`this.mountChildren`)(1)에 마운트 되어야 하고, 부모는 (`DOMLazyTree.queueChild`)(2)에 연결되어야 합니다. 자식들의 마운팅이 분명히 더 재미있을 것이기 때문에 그쪽으로 이동해 봅시다.
+요가 완성된 것처럼 보입니다, 그러니 이제 이 자식들과 함께할 수 있습니다. 여기 두 단계가 있습니다. 자식들은 (`this.mountChildren`)(1)에 마운트 되어야 하고, 부모는 (`DOMLazyTree.queueChild`)(2)에 연결되어야 합니다. 자식들의 마운팅이 분명히 더 재미있을 것이기 때문에 그쪽으로 이동해 봅시다.
 
 자식들을 관리하기 위해 `ReactMultiChild` (`src\renderers\shared\stack\reconciler\ReactMultiChild.js`)라고 불리는 별도의 모듈이 있습니다. 이제 `mountChildren` 메소드를 확인해 봅시다. 여기에는 두 가지 주요 작업이 포함됩니다. 우선, 자식들을 인스턴스화하고(이를 위해 `ReactChildReconciler`를 사용) 그들을 마운트합니다. 실제로 자식들이 여기에 있습니까? 그건 HTML 태그나 다른 커스텀 컴포넌트 일 수 있습니다. HTML을 처리하기 위해 `ReactDOMComponent`를 인스턴스화하고 커스텀 컴포넌트(`ReactCompositeComponent`)를 인스턴스화해야 합니다. 마운트 흐름(flow)는 하위 유형(type)이 무엇인지에 따라 달라집니다.
 
