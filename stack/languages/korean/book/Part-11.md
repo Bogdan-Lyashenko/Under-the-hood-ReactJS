@@ -33,7 +33,7 @@
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)
 
-<em>11.3 파트 10의 필수 가치 (클릭 가능)</em>
+<em>11.3 파트 11의 필수 가치 (클릭 가능)</em>
 
 우리는 해냈습니다!
 
