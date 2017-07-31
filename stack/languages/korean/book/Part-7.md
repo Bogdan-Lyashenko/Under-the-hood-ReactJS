@@ -6,7 +6,7 @@
 
 ### 처음으로 돌아가기
 
-마운팅 한 후 메소드 실행의 결과로 document에 세팅할 준비가 된 HTML 엘리먼트를 가질 수 있었습니다. `markup`(1)이 생성되었지만 `mountComponent`는 이름이 어떻게되어 있더라도 실제로는 HTML 마크업이 아닙니다. `children`, `node`(실제 DOM 노드)등의 필드를 가진 데이터 구조입니다. 그러나 컨테이너에 넣을 HTML 엘리먼트가 있습니다 (`ReactDOM.render` 호출에서 컨테이너로 지정된). 리엑트는 그것들을 DOM에 추가하는 동안 이전에 있던 모든 것을 지울것입니다. `DOMLazyTree`(2)는 트리 데이터 구조로 몇 가지 연산을 수행하는 util 클래스입니다.
+마운팅 이후에 메소드 실행의 결과로 document에 세팅할 준비가 된 HTML 엘리먼트를 가질 수 있었습니다. `markup`(1)이 생성되었지만, `mountComponent`는 이름이 어떻더라도, 실제로는 HTML 마크업이 아닙니다. `children`, `node`(실제 DOM 노드)등의 필드를 가진 데이터 구조입니다. 그러나 컨테이너에 넣을 HTML 엘리먼트는 있습니다(`ReactDOM.render` 호출에서 컨테이너로 지정된). 리엑트는 그것들을 DOM에 추가하는 동안 이전에 있던 모든 것을 지울것입니다. `DOMLazyTree`(2)는 트리 데이터 구조로 몇 가지 연산을 수행하는 util 클래스입니다.
 
 마지막으로 `parentNode.insertBefore (tree.node)`(3)입니다. `parentNode`는 컨테이너`div` 노드이고 `tree.node`는 `ExampleAppliication` div 노드입니다. 마운팅 중 생성된 HTML 엘리먼트는 마침내 document에 삽입되었습니다.
 

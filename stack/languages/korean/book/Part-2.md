@@ -17,7 +17,7 @@ var TRANSACTION_WRAPPERS = [
 ];
 ```
 
-보이는 것처럼 래퍼는 주로 **실제 상태**를 유지하며, 메소드 호출 전에 변경 가능한 값을 락하고, 이후에 릴리즈 하는데 사용됩니다. 따라서 리엑트는 트랜잭션을 수행하여 선택 범위(현재 선택한 텍스트 입력)가 방해받지 않도록합니다.(`initialize`에서 선택하고 `close`에서 복원). 또한, DOM에서 높은 수준의 DOM 조작(마치 일시적으로 DOM에서 텍스트 입력을 제거하는 것)으로 인해 실수로 발생 될 수 있는 이벤트(blur/focus)를 억제하므로 **`ReactBrowserEventEmitter`를 사용하지 않도록** `initialize` 할 때 설정하고, `close`할때 사용하도록 설정합니다.
+보이는 것처럼 래퍼는 주로 **실제 상태**를 유지하며, 메소드 호출 전에 변경 가능한 값을 락하고, 이후에 릴리즈 하는데 사용됩니다. 따라서 리엑트는 트랜잭션을 수행하여 선택 범위(현재 선택한 `<input/>`)가 방해받지 않도록합니다.(`initialize`에서 선택하고 `close`에서 복원). 또한, DOM에서 높은 수준의 DOM 조작(마치 일시적으로 DOM에서 `<input/>`을 제거하는 것)으로 인해 실수로 발생 될 수 있는 이벤트(blur/focus)를 억제하므로 **`ReactBrowserEventEmitter`를 사용하지 않도록** `initialize` 할 때 설정하고, `close`할때 사용하도록 설정합니다.
 
 
 컴포넌트 마운트까지 거의 다 왔습니다. 이제는 DOM에 넣을 준비가 된 마크업을 리턴 해야합니다. 실제로 `ReactReconciler.mountComponent`는 래퍼일 뿐이며, ‘중재인(mediator)’라고 말하는것이 더 정확합니다. 이건 컴포넌트 모듈로 메소드 마운팅을 위임합니다. 이건 정말 중요하니까 강조하도록 하겠습니다.
@@ -51,7 +51,7 @@ var TRANSACTION_WRAPPERS = [
 <em>2.2 간단히 보는 파트 2 리펙토링 버전 (클릭 가능)</em>
 
 
-좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 6*에서 필수 가치를 취할 수 있고 그것을 최종 `mounting` 스키마에 사용할 수 있습니다.
+좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 2*에서 필수 가치를 취할 수 있고 그것을 최종 `mounting` 스키마에 사용할 수 있습니다.
 
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-C.svg)
