@@ -6,12 +6,12 @@
 
 ### Dirty components
 
-보시다시피, 리엑트는 `dirtyComponents`(1)를 통해 루프를 수행하고, 트랜잭션을 통해 `ReactUpdates.runBatchedUpdates`(2)를 호출합니다! 트랜잭션? 새로운 거네요. 그런데 왜요? 한번 살펴 보겠습니다.
+보시다시피, 리엑트는 `dirtyComponents`(1)를 통해 루프를 수행하고, 트랜잭션을 통해 `ReactUpdates.runBatchedUpdates`(2)를 호출합니다. 또 하나의 새로운 트랜잭션이네요? 한번 살펴 보겠습니다.
 
 트랜잭션의 타입은 `ReactUpdatesFlushTransaction`이며, 앞서 언급했듯이 트랜잭션이 실제로 무엇을 하는지 이해하기 위해서는 `wrappers`를 체크해봐야합니다. 코드의 주석에 작은 힌트가 있습니다.
 > 'ReactUpdatesFlushTransaction의 래퍼는 dirtyComponents 배열을 지우고, 마운트 준비 핸들러(예: componentDidUpdate)가 대기열에 추가 한 모든 업데이트를 수행합니다.'
 
-어쨋든, 우리는 그것을 증명할 필요가 있습니다. 두 개의 래퍼 `NESTED_UPDATES`와 `UPDATE_QUEUEING`가 있습니다. `initialize` 단계에서 `dirtyComponentsLength`(3)를 저장하고, `close`를 체크할때나 리엑트를 비교할 때, 아마도 업데이트 중에 dirty components의 플러시 수가 변경되었으므로, 분명히 `flushBatchedUpdates`를 한 번 더 실행해야합니다. 보시다시피, 마법도없고, 모든 것이 꽤 간단합니다.
+여기, 두 개의 래퍼 `NESTED_UPDATES`와 `UPDATE_QUEUEING`가 있습니다. `initialize` 단계에서 우리는 `dirtyComponentsLength`(3)'를 저장하고 `close`에서 확인할 수 있습니다, 리엑트가 업데이트되는 동안에 dirty 컴포넌트의 플러시 수(dirtyComponentsLength)가 변경되었으므로 `flushBatchedUpdates`를 한 번 더 실행해야합니다. 보시다시피, 마법도 없고, 모든 것이 꽤 간단합니다.
 
 음 .. 사실 한 번의 마법의 순간이 있습니다. `ReactUpdatesFlushTransaction`는 `Transaction.perform`메소드를 오버라이드합니다. 왜냐하면, 실제로는 `ReactReconcileTransaction`(트랜잭션은 마운트 중에 사용되며 앱 상태를 안전하게 유지할 수 있습니다)의 행동이 필요합니다. 그래서 `ReactUpdatesFlushTransaction.perform`메소드 내부에서 `ReactReconcileTransaction`도 사용되기 때문에, 실제로 트랜잭션 메소드가 한 번 더 래핑됩니다.
 
@@ -34,7 +34,7 @@ method -> ReactUpdates.runBatchedUpdates
 
 이건 실제로 동일한 컴포넌트에 대한 이중 업데이트를 피하는 데 도움이됩니다.
 
-마지막으로 `dirtyComponents`를 반복하고 각 컴포넌트를 ReactReconciler.performUpdateIfNecessary`(5)로 전달합니다. 실제로 `performUpdateIfNecessary`메소드가 `ReactCompositeComponent`인스턴스에서 호출 될 것이므로 `ReactCompositeComponent` 코드로 다시 이동하겠습니다. 그것의 메소드는 `updateComponent`입니다. 여기서 우리는 우리에게 흥미로운 것을 발견 할 수 있습니다. 이제 더 깊이 들어가 봅시다.
+마지막으로 `dirtyComponents`를 반복하고 각 컴포넌트를 `ReactReconciler.performUpdateIfNecessary`(5)로 전달합니다. 실제로 `performUpdateIfNecessary`메소드가 `ReactCompositeComponent`인스턴스에서 호출 될 것이므로 `ReactCompositeComponent` 코드로 다시 이동하겠습니다. 그것의 메소드는 `updateComponent`입니다. 여기서 우리는 우리에게 흥미로운 것을 발견 할 수 있습니다. 이제 더 깊이 들어가 봅시다.
 
 ### 좋습니다, 이제 우리는 *파트 10*를 끝냈습니다.
 

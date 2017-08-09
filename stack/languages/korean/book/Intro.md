@@ -1,6 +1,6 @@
 ## 인트로
 
-### 스키마 처음보기
+### 처음으로 보는 스키마
 
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/all-page-stack-reconciler-25-scale.jpg)](../images/intro/all-page-stack-reconciler.svg)
@@ -39,7 +39,7 @@
 **리엑트 DOM**의 논리 흐름을 일반 브라우저에서 배워봅시다. 이건 가장 많이 사용되는 플랫폼이며 리엑트의 모든 아키텍처 아이디어를 완벽하게 다루고 있습니다. 이제 충분합니다!
 
 
-### 코드 샘플
+### 샘플 코드
 
 프레임워크 또는 라이브러리의 코드를 배우는 가장 좋은 방법은 무엇일까요? 바로 코드를 읽고 디버깅하는 것입니다. 이제 **두 개의 프로세스**를 디버깅할 겁니다 : **ReactDOM.render**, **component.setState**. 이 프로세스는 마운트 및 업데이트할 때 매핑됩니다. 코드를 살펴보도록 합시다. 뭐가 필요할까요? 아마도 간단한 렌더러를 가진 여러 개의 작은 컴포넌트들일 텐데, 이것들은 디버깅하기 쉬울 겁니다.
 

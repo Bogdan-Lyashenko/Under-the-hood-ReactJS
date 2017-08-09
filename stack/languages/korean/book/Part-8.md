@@ -16,7 +16,7 @@ this.updater.enqueueSetState(this, partialState)
 ```
 보시다시피, 여기 `updater` 인터페이스가 있습니다. `updater`란 뭔가요? 우리가 방금 분석 한 마운팅 프로세스를 확인해보면, `mountComponent` 동안, 인스턴스는 `ReactUpdateQueue`(`src\renderers\shared\stack\reconciler\ReactUpdateQueue.js`)에 대한 참조로 `updater`속성을 받습니다.
 
-`enqueueSetState`(1) 메소드 안으로 들어가서 봅시다. 우선 부분상태(partial state: `this.setState`에 전달하는 객체)를 내부 인스턴스 `_pendingStateQueue`(2)로 푸시합니다.(다시 말하면 public 인스턴스는 실제로 커스텀 컴포넌트인 `ExampleApplication`이고 내부 인스턴스는 마운트 중에 생성 된 `ReactCompositeComponent`입니다.). 다음엔, `enqueueUpdate` 입니다. 실제로 진행중인 업데이트가 있는지를 확인하고, 컴포넌트를 `dirtyComponents`리스트에 넣습니다. 그렇지 않다면 - init update transaction을 실행 한 다음, 컴포넌트를 `dirtyComponents`리스트에 넣습니다.
+`enqueueSetState`(1) 메소드 안으로 들어가서 봅시다. 우선 부분상태(partial state: `this.setState`에 전달하는 객체)를 내부 인스턴스 `_pendingStateQueue`(2)로 푸시합니다.(되집어 봅시다: public 인스턴스는 실제로 커스텀 컴포넌트인 `ExampleApplication`이고, 내부 인스턴스는 마운트 중에 생성 된 `ReactCompositeComponent`입니다.). 다음엔, `enqueueUpdate` 입니다. 실제로 진행중인 업데이트가 있는지를 확인하고, 컴포넌트를 `dirtyComponents`리스트에 넣습니다. 그렇지 않다면 - init update transaction을 실행 한 다음, 컴포넌트를 `dirtyComponents`리스트에 넣습니다.
 
 요약하자면, 각 컴포넌트는 자신의 보류 상태(pending states)의 목록을 가지고 있습니다. 즉, 하나의 트랜잭션에서 `setState`를 호출 할 때마다 그 객체를 대기열에 넣은 다음 나중에 하나씩 컴포넌트 상태(state)로 머지합니다. 그리고 `setState`를 호출하면, 컴포넌트를 `dirtyComponents`리스트에 추가 할 수 있습니다. 당신은 아마 `dirtyComponents`가 어떻게 처리되는지 궁금할것입니다. 맞습니다. 그게 퍼즐의 중요한 부분입니다.
 
