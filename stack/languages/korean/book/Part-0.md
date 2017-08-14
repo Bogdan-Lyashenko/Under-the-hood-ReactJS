@@ -7,7 +7,7 @@
 ### ReactDOM.render
 좋습니다! 이제 ReactDOM.render 부터 시작해보도록 하죠.
 
-시작점은 ReactDom.render입니다. 앱은 여기서부터 DOM 렌더링을 시작합니다. 쉬운 디버깅을 위해 간단한 컴포넌트 `<ExampleApplication/>`를 만들었습니다. 첫번째로 발생되는 작업은 **JSX가 리엑트의 엘리먼트로 변형되는 겁니다**. 이건 매우 단순하며, 간단한 구조를 한 plain objects 입니다. 단지 컴포넌트의 렌더링시 반환된 것일 뿐입니다. 여기에 있는 props, key, ref 와 같은 몇 가지 필드들은 친숙해져야 할 필요가 있습니다. 속성(Property) 타입은 JSX에서 설명하는 마크업 객체를 참조합니다. 그래서, 우리의 경우, `ExampleApplication` 클래스 이지만 버튼 태그에 대한 문자열 `button` 일 수도 있습니다. 또한 리엑트 엘리먼트를 생성하는 동안 리엑트는 `defaultProps`를 `props`(지정된 경우)와 머지하고 `propTypes`을 확인합니다.
+시작점은 ReactDom.render입니다. 앱은 여기서부터 DOM 렌더링을 시작합니다. 쉬운 디버깅을 위해 간단한 컴포넌트 `<ExampleApplication/>`를 만들었습니다. 첫번째로 발생되는 작업은 **JSX가 리엑트의 엘리먼트로 변형되는 겁니다**. 이건 매우 단순하며, 간단한 구조를 한 plain objects 입니다. 단지 컴포넌트의 렌더링시 반환된 것일 뿐입니다. 여기에 있는 props, key, ref 와 같은 몇 가지 필드들은 친숙해져야 할 필요가 있습니다. Property는 JSX에서 설명하는 마크업 객체를 참조합니다. 그래서, 우리의 경우, `ExampleApplication` 클래스 이지만 버튼 태그에 대한 문자열 `button` 일 수도 있습니다. 또한 리엑트 엘리먼트를 생성하는 동안 리엑트는 `defaultProps`를 `props`(지정된 경우)와 머지하고 `propTypes`을 확인합니다.
 
 더 자세한 내용은 소스 코드를 확인하십시오.: `src\isomorphic\classic\element\ReactElement.js`
 
@@ -45,7 +45,7 @@
 
 3단계를 확인하실 수 있는데, 리엑트 엘리먼트를 통한 JSX는 내부 리엑트 컴포넌트 유형 중 하나로 변환됩니다. : `ReactCompositeComponent` (자체 컴포넌트 용), `ReactDOMComponent` (HTML 태그 용), `ReactDOMTextComponent` (text nodes 용). 우리는 `ReactDOMTextComponent`를 생략하고 처음 두 개만 집중하도록 하겠습니다.
 
-내부 컴포넌트란 뭘까요? 음, 이건 좀 흥미롭습니다. 가상 DOM에 대해 들어 보신적 있을겁니다. 가상 DOM은 리엑트가 diff 중에 DOM을 직접 건드리지 않는데 사용되는 DOM 표현의 일종입니다. 이것이 리엑트를 빠르게 하죠. 그러나 실제로 리엑트 소스코드에는 '가상 DOM'이라는 파일이나 클래스가 없습니다. 재미있지 않나요? 가상 DOM은 단지 개념일 뿐이며, 실제 DOM에 접근하기 위한 접근방식 입니다. 그래서 몇몇 사람들은 가상 DOM 항목이 리엑트 엘리먼트를 참조하고 있다고 말합니다. 그러나 그건 정확하게 맞지 않다고 생각됩니다. 제 생각에 가상 DOM은 `ReactCompositeComponent`, `ReactDOMComponent`, `ReactDOMTextComponent`라는 세 클래스를 참조한다고 생각합니다. 왜 그렇게 되는지 확인해보도록 하죠.
+내부 컴포넌트란 뭘까요? 음, 이건 좀 흥미롭습니다. **Virtual DOM**에 대해 들어 보신적 있을겁니다. Virtual DOM은 리엑트가 diff 중에 DOM을 직접 건드리지 않는데 사용되는 DOM 표현의 일종입니다. 이것이 리엑트를 빠르게 하죠. 그러나 실제로 리엑트 소스코드에는 'Virtual DOM'이라는 파일이나 클래스가 없습니다. 재미있지 않나요? Virtual DOM은 단지 개념일 뿐이며, 실제 DOM에 접근하기 위한 접근방식 입니다. 그래서 몇몇 사람들은 Virtual DOM 항목이 리엑트 엘리먼트를 참조하고 있다고 말합니다. 그러나 그건 정확하게 맞지 않다고 생각됩니다. 제 생각에 Virtual DOM은 `ReactCompositeComponent`, `ReactDOMComponent`, `ReactDOMTextComponent`라는 세 클래스를 참조한다고 생각합니다. 왜 그렇게 되는지 확인해보도록 하죠.
 
 좋습니다, 이제 인스턴스 만드는 작업을 끝내보도록 하죠. 우리는 `ReactCompositeComponent`를 만들었다고 생각하지만 그렇지 않습니다. 왜냐하면 실제로는 `<ExampleApplication/>`을 `ReactDOM.render`에 넣었기 때문이죠. 리엑트는 항상 `TopLevelWrapper`에서 컴포넌트 트리를 렌더링하기 시작합니다. 이건 거의 비어있는 래퍼이며, `render`(컴포넌트의 렌더링 메서드)은 나중에 `<ExampleApplication />`을 반환합니다.
 
@@ -91,4 +91,4 @@ TopLevelWrapper.prototype.render = function () {
 [<< 이전 페이지 : 인트로](./Intro.md)
 
 
-[홈](../../README.md)
+[홈](./README.md)
