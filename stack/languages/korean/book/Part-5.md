@@ -29,7 +29,7 @@ transaction.getReactMountReady().enqueue(putListener, {
 });
 ```
 
-이벤트 리스너 뒤에 DOM attribute과 DOM property 값을 설정합니다. 이전과 마찬가지로 attributes가 `RESERVED_PROPS` 중 하나인지 확인합니다. 실제로는 `children`, `dangerouslySetInnerHTML`와 같은 `prop`입니다.
+이벤트 리스너를 추가한 후에 DOM attribute과 DOM property 값을 설정합니다. 이전과 마찬가지로 attributes가 `RESERVED_PROPS` 가 아니고, `children`, `dangerouslySetInnerHTML`와 같은 실제 `prop`인지 확인합니다.
 
 마지막 및 다음 props을 처리하는 동안 `styleUpdates` 설정을 계산하고 그것을 `CSSPropertyOperations` 모듈에 전달합니다.
 
@@ -37,23 +37,23 @@ transaction.getReactMountReady().enqueue(putListener, {
 
 ### 좋습니다, 이제 우리는 *파트 5*를 끝냈습니다.
 
-우리가 어떻게 여기까지 왔는지 다시 한번 살펴보도록 합시다. 스키마를 한번 더 보시고, 덜 중요한 부분을 제거하면 다음과 같습니다.
+우리가 어떻게 여기에 왔는지 다시 한번 살펴보도록 합시다. 스키마를 한번 더 보시고 덜 중요한 부분을 제거하면 다음과 같습니다:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/5/part-5-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/5/part-5-A.svg)
 
 <em>5.1 간단히 보는 파트 5 (클릭 가능)</em>
 
-공백을 처리하고 정렬을 통해 더 좋게 수정했습니다.
+공백제거와 정렬을 통해 보기 좋게 수정했습니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/5/part-5-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/5/part-5-B.svg)
 
 <em>5.2 간단히 보는 파트 5 리펙토링 버전 (클릭 가능)</em>
 
-좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 5*에서 필수 가치를 취할 수 있고 그것을 최종 `mounting` 스키마에 사용할 수 있습니다.
+좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 5*의 필수적인 요소들을 가지고 최종 `mounting` 스키마에 사용할 수 있습니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/5/part-5-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/5/part-5-C.svg)
 
-<em>5.3 파트 5의 필수 가치</em>
+<em>5.3 파트 3의 필수 요소 (클릭 가능)</em>
 
 우리는 해냈습니다!
 

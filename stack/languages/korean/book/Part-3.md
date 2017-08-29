@@ -8,17 +8,17 @@
 
 `componentMount` 메소드는 이 여정에서 가장 큰 부분 중 하나입니다! 그래서, 우리에게 `ReactCompositeComponent.mountComponent`(1)는 흥미로운 메소드 입니다.
 
-**컴포넌트의 트리에 처음 삽입되는** 컴포넌트는`TopLevelWrapper`(내부 리엑트 클래스)라고 한 적이 있었습니다. 이제 우리는 그걸 마운팅 하려고 합니다. 하지만, 이건 기본적으로 비어있는 래퍼이므로 디버깅하는 것은 좀 지루합니다. 지금 흐름과 전혀 상관이 없기 때문에 지금은 이걸 건너 뛰고 자식으로 이동하겠습니다.
+기억하시겠지만, **컴포넌트의 트리에 처음 삽입되는** 컴포넌트는`TopLevelWrapper`(내부 리엑트 클래스)라고 한 적이 있었습니다. 이제 그것 마운팅 하려고 합니다. 하지만, 이건 사실 비어있는 래퍼이므로 디버깅이 좀 지루합니다. 지금 흐름에 전혀 영향을 주지 않기 때문에 지금은 이걸 건너 뛰고 자식으로 이동하겠습니다.
 
-이건 트리의 마운트가 실제로 작동하는 방법입니다. 부모, 그것의 자식, 그 자식의 자식 등을 마운트합니다. `TopLevelWrapper`가 마운트 된 후에, 그것(ExampleApplication 컴포넌트를 관리하는`ReactCompositeComponent`)의 자식은 같은 단계에 놓이게됩니다.
+부모와 그 부모의 자식, 그 자식의 자식을 계속해서 마운트하는 것이 트리의 마운팅이 실제로 하는 일입니다. 저를 믿으세요, `TopLevelWrapper`가 마운트 된 후에, 그것(ExampleApplication 컴포넌트를 관리하는`ReactCompositeComponent`)의 자식도 같은 단계에 놓이게됩니다.
 
-좋습니다, 이제 다시 step(1)로 돌아갑시다. 안에 뭐가 있는지 보십시오. 몇 가지 주요 동작이 발생하므로, 자세하게 이 로직을 살펴 보겠습니다.
+좋습니다, 이제 다시 step(1)로 돌아갑시다. 안에 뭐가 있는지 봅시다. 몇 가지 주요 동작이 발생하므로, 자세하게 이 로직을 살펴 보겠습니다.
 
 ### 인스턴스 updater 할당
 
-`updater`(2)는 `transaction.getUpdateQueue()`에서 리턴되며 실제로는 `ReactUpdateQueue`모듈입니다. 그런데 이것이 **여기서 할당**되는 이유는 무엇일까요? `ReactCompositeComponent`(우리가 현재보고있는 클래스)는 모든 플랫폼에서 사용되지만, updater와는 플랫폼에 따라 다르게 때문에 마운트되는 동안 동적으로 할당합니다.
+`transaction.getUpdateQueue()`에서 리턴되는 `updater`(2)는 사실 `ReactUpdateQueue` 모듈입니다. 그런데 `updater`가 왜 **여기서 할당**될까요? `ReactCompositeComponent`(우리가 현재보고있는 클래스)는 모든 플랫폼에서 사용되지만, updater는 그렇지 않기 때문에 플랫폼에 따라 마운팅되는 동안 동적으로 할당합니다.
 
-지금 `updater`가 필요하지는 않지만 명심하십시오. `updater`는 정말 **중요**합니다. 잘 알려진 컴포넌트 메소드인 **`setState`**에 의해 곧 사용될 것입니다.
+지금은 `updater`가 필요하지는 않지만 기억해 두십시오. `updater`는 정말 **중요**합니다. 잘 알려진 컴포넌트 메소드인 **`setState`**에 의해 곧 사용될 것입니다.
 
 이 단계에서 인스턴스에 `updater`가 할당될뿐만 아니라 컴포넌트 인스턴스(사용자 정의 컴포넌트)도 `props`, `context`, `refs`로 확장됩니다.
 
@@ -26,8 +26,8 @@
 
 ```javascript
 // \src\renderers\shared\stack\reconciler\ReactCompositeComponent.js #255
-// 이것들은 생성자에서 설정되어야하지만,
-// 단순한 클래스 추상화의 편의를 위해, 우리는 사실 이후에 그들을 설정했다.
+// 이것들은 생성자안에서 설정되어야하지만,  
+// 좀더 단순한 클래스 추상화의 편의를 위해, 생성자 이후에 설정했다.
 inst.props = publicProps;
 inst.context = publicContext;
 inst.refs = emptyObject;
@@ -78,17 +78,17 @@ if (inst.componentWillMount) {
 
 <em>3.1 간단히 보는 파트 3 (클릭 가능)</em>
 
-우리는 공백하고 정렬 부분도 아마 고쳐야 할것 같습니다:
+공백제거와 정렬을 통해 보기 좋게 수정했습니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
 
 <em>3.2 간단히 보는 파트 3 리펙토링 버전 (클릭 가능)</em>
 
-멋집니다. 사실 이게 여기서 일어나는 일 전부 입니다. 이제 우리는 *파트 3*에서 필수적인 가치를 취할 수 있고 그것을 최종 mounting 스키마로 사용할 수 있습니다:
+좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 3*의 필수적인 요소들을 가지고 최종 `mounting` 스키마에 사용할 수 있습니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)
 
-<em>3.3 파트 3 필수 가치 (클릭 가능)</em>
+<em>3.3 파트 3의 필수 요소 (클릭 가능)</em>
 
 그리고 이제 우리는 해냈습니다!
 
