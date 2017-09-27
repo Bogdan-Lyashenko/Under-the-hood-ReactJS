@@ -6,7 +6,7 @@
 
 ### 또 하나의 트랜젝션
 
-이제는 `ReactReconcileTransaction`를 알아볼 시간입니다. 이미 알고 있겠지만, 트랜잭션 래퍼는 우리에게 매우 흥미롭다는 것입니다. 여기 3개의 래퍼가 있습니다.
+이제는 `ReactReconcileTransaction`를 알아볼 시간입니다. 이미 알고 있겠지만, 트랜잭션 래퍼는 매우 흥미롭습니다. 여기 3개의 래퍼가 있습니다.
 
 ```javascript
 // \src\renderers\dom\client\ReactReconcileTransaction.js #89
@@ -32,31 +32,23 @@ var TRANSACTION_WRAPPERS = [
 
 ### 좋습니다, 이제 우리는 *파트 2*를 끝냈습니다.
 
-
-우리가 어떻게 여기까지 왔는지 다시 한번 살펴보도록 합시다. 스키마를 한번 더 보시고, 덜 중요한 부분을 제거하면 다음과 같습니다.
-
+우리가 어떻게 여기까지 왔는지 다시 한번 살펴보도록 합시다. 스키마에서 덜 중요한 부분을 제거하면 다음과 같습니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-A.svg)
 
-
 <em>2.1 간단히 보는 파트 2 (클릭 가능)</em>
-
 
 공백제거와 정렬을 통해 보기 좋게 수정했습니다.
 
-
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-B.svg)
-
 
 <em>2.2 간단히 보는 파트 2 리펙토링 버전 (클릭 가능)</em>
 
-
-좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 2*의 필수적인 요소들을 가지고 최종 `mounting` 스키마에 사용할 수 있습니다.
+좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 2*의 핵심들을 가지고 최종 `mounting` 스키마에 사용할 수 있습니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/2/part-2-C.svg)
 
-
-<em>2.3 파트 2의 필수 요소 (클릭 가능)</em>
+<em>2.3 파트 2의 핵심 (클릭 가능)</em>
 
 우리는 해냈습니다!
 

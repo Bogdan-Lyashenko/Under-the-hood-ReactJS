@@ -15,7 +15,7 @@
 
 <em>Intro.1 모듈의 색깔들 (클릭 가능)</em>
 
-**모듈들간의 의존성**들을 확인하기 위해 스키마에 넣어봅시다.
+**모듈들간의 의존성**들을 확인하기 위해 스키마로 표현해봅시다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)
 
@@ -28,20 +28,20 @@
 - **ReactART** (벡터 그래픽을 그리기 위한 리엑트)
 - etc.
 
-결과적으로는 위의 스키마보다 실제로는 더 많은 파일들이 있습니다. 다음은 다중지원이 포함된 동일한 스키마입니다.
+결과적으로는 위의 스키마보다 실제로는 더 많은 파일들이 있습니다. 다음은 다중지원이 포함된 스키마입니다.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)
 
 <em>Intro.3 플랫폼 의존성들 (클릭 가능)</em>
 
-몇개의 항목들은 중첩되어 있는게 보이실겁니다. 이건 각 플랫폼마다 별도로 구현되어 있음을 보여줍니다. ReactEventListener와 같은 간단한 것으로 한번 봅시다. 분명히 그건 플랫폼마다 구현이 다를 것입니다! 당신이 상상해볼 수 있듯이, 기술적으로 플랫폼 종속 모듈은 어떻게든 현재의 논리 흐름에 주입되거나 연결되어야하며, 실제로 그러한 많은 injectors가 있습니다. 사용법은 표준 컴포지션 패턴의 일부이기 때문에 생략했습니다. 다시 말하자면 단순함을 위해서 입니다.
+몇개의 항목들은 중첩되어 있는게 보이실겁니다. 이건 각 플랫폼마다 별도로 구현되어 있음을 보여줍니다. ReactEventListener와 같은 간단한 것을 살펴봅시다. 분명히 그건 플랫폼마다 구현이 다를 것입니다! 여러분이 상상해볼 수 있듯이, 기술적으로 플랫폼 종속 모듈은 어떻게든 현재의 논리 흐름에 주입되거나 연결되어야하며, 실제로 그러한 많은 injectors가 있습니다. 사용법은 표준 컴포지션 패턴의 일부이기 때문에 생략했습니다. 다시 말하자면 단순함을 위해서 입니다.
 
 **일반 브라우저**에서의 **리엑트 DOM**의 논리 흐름을 배워봅시다. 이건 가장 많이 사용되는 플랫폼이며 리엑트의 모든 아키텍처 아이디어를 완벽하게 다루고 있습니다.
 
 
 ### 샘플 코드
 
-프레임워크 또는 라이브러리의 코드를 배우는 가장 좋은 방법은 무엇일까요? 맞습니다, 바로 코드를 읽고 디버깅하는 것입니다. 이제 **두 개의 프로세스**를 디버깅할 겁니다 : 마운트 및 업데이트할 때 매핑되는 **ReactDOM.render**과 **component.setState** 입니다. 코드를 살펴보도록 합시다. 뭐가 필요할까요? 아마도 간단한 렌더러를 가진 여러 개의 작은 컴포넌트들일 텐데, 이것들은 디버깅하기 쉬울 겁니다.
+프레임워크 또는 라이브러리의 코드를 배우는 가장 좋은 방법은 무엇일까요? 맞습니다, 바로 코드를 읽고 디버깅하는 것입니다. 이제 **두 개의 프로세스**를 디버깅해봅시다. : mount와 update할 때 매핑되는 **ReactDOM.render**와 **component.setState** 입니다. 코드를 살펴보도록 합시다. 뭐가 필요할까요? 아마도 간단한 렌더러를 가진 여러 개의 작은 컴포넌트들은 디버깅하기 쉬울 것입니다.
 
 ```javascript
 class ChildCmp extends React.Component {
@@ -102,7 +102,7 @@ ReactDOM.render(
 );
 ```
 
-시작할 준비를 마쳤습니다. 스키마의 첫 번째 부분으로 가봅시다. 차근차근하면 전체를 다 살펴볼 수 있을 겁니다. 
+시작할 준비를 마쳤습니다. 스키마의 첫 번째 부분으로 가봅시다. 차근차근하면 전체를 다 살펴볼 수 있을 것입니다. 
 
 [다음 페이지: 파트 0 >>](./Part-0.md)
 
