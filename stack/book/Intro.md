@@ -1,47 +1,47 @@
-## Intro
+## 介绍
 
-### Scheme, first look
-
-
-[![](../images/intro/all-page-stack-reconciler-25-scale.jpg)](../images/intro/all-page-stack-reconciler.svg)
-
-<em>Intro.0 All scheme (clickable)</em>
-
-So... have a look. Take your time. Overall it looks complex, but in fact, it describes only two processes: mount and update. I skipped unmount because it’s kind of a "reversed mount" and removing it simplified the scheme. Also, **this is not a 100%** match of the code, but only major pieces which describe the architecture. In total, it’s about 60% of the code, but the other 40% would bring little visual value. So again, for simplicity, I omitted it.
-
-On first look, you probably noticed many colors in the scheme. Each logic item (shape on the scheme) is highlighted in its parent module's color. For example, `methodA` will be red if it’s called from `moduleB`, which is red. Below is a legend for the modules in the scheme along with the path to each file.
-
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)
-
-<em>Intro.1 Modules colors (clickable)</em>
-
-Let’s put them into a scheme to see the **dependencies between modules**.
-
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)
-
-<em>Intro.2 Modules dependencies (clickable)</em>
-
-As you probably know, React is built to **support many environments**. 
-- Mobile (**ReactNative**)
-- Browser (**ReactDOM**)
-- Server Rendering
-- **ReactART** (for drawing vector graphics using React)
-- etc.
-
-As a result, a number of files are actually bigger than it looks in the scheme above. Below is the same scheme with multi-support included.
-
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)
-
-<em>Intro.3 Platform dependencies (clickable)</em>
-
-As you can see, some items seem doubled. It shows that they have a separate implementation for each platform. Let’s take something simple like ReactEventListener. Obviously, its implementation will be different for different platforms! Technically, as you can imagine, these platform dependent modules should be somehow injected or connected to the current logic flow and, in fact, there are many such injectors. Because their usage is part of a standard composition pattern, I chose to omit them. Again, for simplicity.
-
-Let’s learn the logic flow for **React DOM** in a **regular browser**. It’s the most used platform and it completely covers all of React’s architecture ideas. So, fair enough!
+### 流程图
 
 
-### Code sample
+[![图 介绍-0：整体流程](../images/intro/all-page-stack-reconciler-25-scale.jpg)](../images/intro/all-page-stack-reconciler.svg)
 
-What is the best way to learn the code of a framework or library? That's right, read and debug the code. Alright, we are going to debug **two processes**: **ReactDOM.render** and **component.setState**, which map on mount and update. Let’s look at the code we can write to start. What do we need? Probably several small components with simple renders, so it will be easier to debug.
+
+
+你可以先花点时间看下整体的流程。虽然看起来很复杂，但它实际上只描述了两个流程：挂载和更新。我跳过了卸载，因为它是一种“反向挂载”，而且删除它简化了流程图。另外，**这并不是100%** 的匹配源码，而只是描述架构的主要部分。总体来说，它大概是源码的 60%，而另外的 40% 没有多少视觉价值，为了简单起见，我省略了。
+
+乍一看，你可能会注意到流程图中有很多颜色。每个逻辑项（流程图上的形状）都以其父模块的颜色高亮显示。例如，如果是从红色的 `模块 B` 调用 `方法 A`，那 `方法 A` 也是红色的。以下是流程图中模块的图例以及每个文件的路径。
+
+[![图 介绍-1：模块颜色](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-src-path.svg)
+
+
+
+让我们把它们放在一张流程图中，看看**模块之间的依赖关系**。
+
+[![图 介绍-2 模块依赖关系](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/files-scheme.svg)
+
+
+
+你可能知道，React 是为**支持多种环境**而构建的。
+- 移动端（**ReactNative**）
+- 浏览器（**ReactDOM**）
+- 服务端渲染
+- **ReactART**（使用 React 绘制矢量图形）
+- 其它
+
+因此，一些文件实际上比上面流程图中列出的要更大。以下是包含多环境支持的相同的流程图。
+
+[![介绍 图-3 多平台模块依赖关系](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/7c2372e1/stack/images/intro/modules-per-platform-scheme.svg)
+
+
+
+如你所见，有些项似乎翻倍了。这表明它们对每个平台都有一个独立的实现。让我们来看一些简单例子，例如 ReactEventListener，显然，不同平台会有不同的实现。从技术上讲，你可以想象，这些依赖于平台的模块，应该以某种方式注入或连接到当前的逻辑流程中。实际上有很多这样的注入器，因为它们的用法是标准组合模式的一部分。同样，为了简单起见，我选择忽略它们。
+
+让我们来学习下**常规浏览器**中 **React DOM** 的逻辑流程。这是最常用的平台，并完全覆盖了所有 React 的架构设计理念。
+
+
+### 代码示例
+
+学习框架或者库的源码的最佳方式是什么？没错，研读并调试源码。那好，我们将要调试这**两个流程**：**ReactDOM.render** 和 **component.setState** 在挂载和更新时的映射。让我们来看一下我们能编写以开始的代码，需要什么呢？或许几个具有简单渲染的小组件就可以了，因为更容易调试。
 
 ```javascript
 class ChildCmp extends React.Component {
@@ -102,9 +102,9 @@ ReactDOM.render(
 );
 ```
 
-So, we are ready to start. Let’s move on to the first part of the scheme. One by one, we will go through all of it.
+因此，我们已经准备好开始了。让我们先来分析流程图中的第一部分。一个接一个，我们会将它们全部分析完。
 
-[To the next page: Part 0 >>](./Part-0.md)
+[下一页：Part 0 >>](./Part-0.md)
 
 
-[Home](../../README.md)
+[首页](../../README.md)
