@@ -1,65 +1,65 @@
-## 第 6 部分
+## Part 6
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6.svg)
 
-<em>6.0 第 6 部分（点击查看大图）</em>
+<em>6.0 Part 6 (clickable)</em>
 
-### 创建最初的子元素
+### Create initial children
 
-好像元素本身已经创建完成了，现在我们可以继续创建它的子元素了。这个分为以下两步：（1）子元素应该由（`this.mountChildren`）加载，（2）并与它的父级通过（`DOMLazyTree.queueChild`）连接。为了让子元素更有趣一点，现在我们修改子元素的属性。
+Seems like the element itself is finished, so now we can continue with its children. Two steps here: children should be mounted (`this.mountChildren`)(1) and connected to the parent (`DOMLazyTree.queueChild`)(2). Let’s move to children mounting because it’s obviously more interesting.
 
-这里有一个单独的 `ReactMultiChild` (`src\renderers\shared\stack\reconciler\ReactMultiChild.js`) 模块来操作子元素。很好，接下来我们检查一下 `mountChildren` 方法。它也包括两个任务。首先，我们初始化子元素（使用 `ReactChildReconciler`）并加载他们。这里到底是什么子元素呢？它可能是一个简单的 HTML 标签或者一个其他自定义的组件。为了处理 HTML，我们需要初始化 `ReactDOMComponent`，对于自定义组件，我们使用 `ReactCompositeComponent`。加载流程也是依赖于子元素是什么类型。
+There is a separate module called `ReactMultiChild` (`src\renderers\shared\stack\reconciler\ReactMultiChild.js`) to manage children. Nice, let’s check the `mountChildren` method then. It contains two main tasks as well. First of all, we instantiate children (use `ReactChildReconciler` for that) and mount them. What children are actually here? It can be a simple HTML tag or another custom component. To handle HTML we need to instantiate `ReactDOMComponent` and for custom component - `ReactCompositeComponent`. The mounting flow, again, depends on what the child type is.
 
-### 再一次
+### One more time
 
-如果你还在阅读这篇文章，那么现在可能是再一次阐述和整理整个过程的时候了。现在我们休息一下，重新整理下对象的顺序。
+If you are still reading this, it's probably time to clarify and review the overall process one more time. Let’s take a break and recollect the sequence of objects.
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/overall-mounting-scheme.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/overall-mounting-scheme.svg)
 
-<em>6.1 所有加载图示（点击查看大图）</em>
+<em>6.1 Overall mounting scheme (clickable)</em>
 
-1) 在React 中使用 `ReactCompositeComponent` 实例化你的自定义组件（通过使用像`componentWillMount` 这类的组件生命周期钩子）并加载它。
+1) React instantiates `ReactCompositeComponent` for each of your custom components (with component lifecycle hooks like `componentWillMount`, etc) and mounts it.
 
-2) 在加载过程中，首先会创建一个你自定义组件的例子（调用`构造器`）。
+2) During mounting, at first, an instance of your custom component will be created (`constructor` called).
 
-3) 然后，调用渲染方式（举个简单的例子，渲染返回的 `div`）并且 `React.createElement` 来创建 React 元素。它可以直接被调用或者通过Babel解析JSX后来替换渲染中的标签。但是，它可能不是我们所需要的，看看接下来是什么。
+3) Then, its render method is called (for a simple example, render returns `div`) and `React.createElement` creates the React elements. It can be called directly or after parsing JSX by Babel and replacing tags in your render. But, it’s not exactly what we need, see what's next below.
 
-4) 我们对于 `div` 需要一个 DOM 组件。所以，在实例化过程中，我们从元素-对象（上文提到过）出发创建 `ReactDOMComponent` 的例子。
+4) We need a DOM component for our `div`. So, during an instantiation process, we create instances of `ReactDOMComponent` from the element-objects (mentioned above).
 
-5) 然后，我们需要加载 DOM 组件。这实际上就意味者我们创建 DOM 元素，并加载了事件监听等。
+5) Then, we need to mount the DOM component. That actually means we create the DOM elements and assign event listeners, etc.
 
-6) 然后，我们处理我们的DOM组件的初始子元素。我们创建它们的实例并且加载它们。根据子元素的每个条件是什么，自定义组件或只是HTML标签，我们分别跳转到步骤1）或步骤5）。然后再一次处理所有的嵌套元素。
+6) Then, we process the initial children of our DOM component. We create instances of them and mount them as well. Depending on what each item of the children is, a custom component or just an HTML tag, we recurse to step 1) or step 5) respectively. And then again for all nested elements.
 
-加载过程就是这个。就像你看到的一样非常直接。
+That’s it. It's pretty straightforward as you can see.
 
-加载基本完成。给 `componentDidMount` 方法拍一下序。做的好。
+So, mounting is basically finished. Enqueue the `componentDidMount` method! Great job.
 
-### 好的，我们已经完成了*第 6 部分*
+### Alright, we’ve finished *Part 6*.
 
-让我们概括一下我们怎么到这里的。再一次看一下示例图，然后移除掉冗余的不那么重要的部分，它就变成了这样：
+Let’s recap how we got here. Let's look at the scheme one more time, then remove redundant less important pieces, and it becomes this:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-A.svg)
 
-<em>6.2 第 6 部分 简化（点击查看大图）</em>
+<em>6.2 Part 6 simplified (clickable)</em>
 
-我们也应该尽可能的修改空格和对齐方式:
+And we should probably fix spaces and alignment as well:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-B.svg)
 
-<em>6.3 第 6 部分 简化和重构（点击查看大图）</em>
+<em>6.3 Part 6 simplified & refactored (clickable)</em>
 
-很好。实际上它就是这儿所发生的一切。我们可以从*第 6 部分*中获得基本价值，并将其用于最终的“加载”图表：
+Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 6* and use it for the final `mounting` scheme:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-C.svg)
 
-<em>6.4 第 6 部分本质 (点击查看大图)</em>
+<em>6.4 Part 6 essential value (clickable)</em>
 
-完成！
-
-
-[下一节：第 7 部分 >>](./Part-7.md)
-
-[<< 上一节：第 5 部分](./Part-5.md)
+And then we're done!
 
 
-[主页](../../README.md)
+[To the next page: Part 7 >>](./Part-7.md)
+
+[<< To the previous page: Part 5](./Part-5.md)
+
+
+[Home](../../README.md)
