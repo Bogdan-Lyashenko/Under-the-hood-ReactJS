@@ -48,4 +48,4 @@ this.updater.enqueueSetState(this, partialState)
 [<< 上一节: 第 7 部分](./Part-7.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
