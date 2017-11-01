@@ -3,9 +3,9 @@
 ### 初识流程图
 
 
-[![图 介绍-0：整体流程](../images/intro/all-page-stack-reconciler-25-scale.jpg)](../images/intro/all-page-stack-reconciler.svg)
+[![](https://github.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/raw/master/stack/images/intro/all-page-stack-reconciler-25-scale.jpg)](https://github.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/raw/master/stack/images/intro/all-page-stack-reconciler-25-scale.svg)
 
-
+图 介绍-0：整体流程
 
 你可以先花点时间看下整体的流程。虽然看起来很复杂，但它实际上只描述了两个流程：(组件的)挂载和更新。我跳过了卸载，因为它是一种“反向挂载”，而且删除这部分简化了流程图。另外，**这图并不是100%** 同源代码匹配，而只是描述架构的主要部分。总体来说，它大概是源代码的 60%，而另外的 40% 没有多少视觉价值，为了简单起见，我省略了那部分。
 
@@ -107,4 +107,4 @@ ReactDOM.render(
 [下一页：Part 0 >>](./Part-0.md)
 
 
-[首页](../../README.md)
+[首页](./README.md)
