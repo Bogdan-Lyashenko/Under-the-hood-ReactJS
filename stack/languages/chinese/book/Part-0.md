@@ -91,4 +91,4 @@ TopLevelWrapper.prototype.render = function () {
 [<< 上一页：介绍](./Intro.md)
 
 
-[首页](../../README.md)
+[首页](./README.md)
