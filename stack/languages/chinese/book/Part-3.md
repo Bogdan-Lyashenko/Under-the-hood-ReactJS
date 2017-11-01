@@ -98,4 +98,4 @@ if (inst.componentWillMount) {
 [<< 上一节: 第 2 部分](./Part-2.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
