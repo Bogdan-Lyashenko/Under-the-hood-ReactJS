@@ -91,4 +91,4 @@ var TRANSACTION_WRAPPERS = [FLUSH_BATCHED_UPDATES, RESET_BATCHED_UPDATES];
 [<< 上一节 第 0 部分](./Part-0.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
