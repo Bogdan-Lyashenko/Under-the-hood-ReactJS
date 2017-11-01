@@ -53,4 +53,4 @@ var TRANSACTION_WRAPPERS = [
 
 [<< 上一页：第一部分](./Part-1.md)
 
-[首页](../../README.md)
+[首页](./README.md)
