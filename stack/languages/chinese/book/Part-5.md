@@ -63,4 +63,4 @@ transaction.getReactMountReady().enqueue(putListener, {
 [<< 上一节: 第 4 部分](./Part-4.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
