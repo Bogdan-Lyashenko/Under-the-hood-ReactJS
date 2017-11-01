@@ -69,4 +69,4 @@ ReactErrorUtils.invokeGuardedCallback = function (name, func, a) {
 [<< 上一节: 第 8 部分](./Part-8.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
