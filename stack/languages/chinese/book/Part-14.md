@@ -121,4 +121,4 @@ processUpdates: function(parentNode, updates) {
 [<< 上一节: 第 13 部分](./Part-13.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
