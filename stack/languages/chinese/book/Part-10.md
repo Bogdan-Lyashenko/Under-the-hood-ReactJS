@@ -69,4 +69,4 @@ method -> ReactUpdates.runBatchedUpdates
 [<< 上一节: 第 9 部分](./Part-9.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
