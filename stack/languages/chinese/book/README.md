@@ -16,22 +16,22 @@
 
 整个流程图分为 15 个部分，让我们开始吧。
 
-* [介绍](../../../../stack/book/Intro.md)
-* [Part 0](../../../../stack/book/Part-0.md)
-* [Part 1](../../../../stack/book/Part-1.md)
-* [Part 2](../../../../stack/book/Part-2.md)
-* [Part 3](../../../../stack/book/Part-3.md)
-* [Part 4](../../../../stack/book/Part-4.md)
-* [Part 5](../../../../stack/book/Part-5.md)
-* [Part 6](../../../../stack/book/Part-6.md)
-* [Part 7](../../../../stack/book/Part-7.md)
-* [Part 8](../../../../stack/book/Part-8.md)
-* [Part 9](../../../../stack/book/Part-9.md)
-* [Part 10](../../../../stack/book/Part-10.md)
-* [Part 11](../../../../stack/book/Part-11.md)
-* [Part 12](../../../../stack/book/Part-12.md)
-* [Part 13](../../../../stack/book/Part-13.md)
-* [Part 14](../../../../stack/book/Part-14.md)
+* [介绍](../../../../stack/languages/chinese/book/Intro.md)
+* [Part 0](../../../../stack/languages/chinese/book/Part-0.md)
+* [Part 1](../../../../stack/languages/chinese/book/Part-1.md)
+* [Part 2](../../../../stack/languages/chinese/book/Part-2.md)
+* [Part 3](../../../../stack/languages/chinese/book/Part-3.md)
+* [Part 4](../../../../stack/languages/chinese/book/Part-4.md)
+* [Part 5](../../../../stack/languages/chinese/book/Part-5.md)
+* [Part 6](../../../../stack/languages/chinese/book/Part-6.md)
+* [Part 7](../../../../stack/languages/chinese/book/Part-7.md)
+* [Part 8](../../../../stack/languages/chinese/book/Part-8.md)
+* [Part 9](../../../../stack/languages/chinese/book/Part-9.md)
+* [Part 10](../../../../stack/languages/chinese/book/Part-10.md)
+* [Part 11](../../../../stack/languages/chinese/book/Part-11.md)
+* [Part 12](../../../../stack/languages/chinese/book/Part-12.md)
+* [Part 13](../../../../stack/languages/chinese/book/Part-13.md)
+* [Part 14](../../../../stack/languages/chinese/book/Part-14.md)
 
 
 
