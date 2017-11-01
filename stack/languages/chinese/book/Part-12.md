@@ -70,4 +70,4 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 [<< 上一节: 第 11 部分](./Part-11.md)
 
 
-[主页](../../README.md)
+[主页](./README.md)
