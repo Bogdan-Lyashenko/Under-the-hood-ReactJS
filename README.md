@@ -40,4 +40,5 @@ The entire scheme is divided into 15 parts, let's get started.
 
 
 ## Languages
-[Korean](./stack/languages/korean/book/Intro.md)
+- [Chinese](./stack/languages/chinese/book/Intro.md)
+- [Korean](./stack/languages/korean/book/Intro.md)
