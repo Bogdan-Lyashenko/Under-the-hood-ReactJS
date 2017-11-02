@@ -35,6 +35,7 @@ The entire scheme is divided into 15 parts, let's get started.
 
 
 ## Fiber
+Will be done with a help of [js-code-to-svg-flowchart tool](https://github.com/Bogdan-Lyashenko/js-code-to-svg-flowchart) later. 
 1. [Intro](./fiber/book/Intro.md) [TODO]
 
 
