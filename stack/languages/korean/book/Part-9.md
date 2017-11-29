@@ -10,7 +10,7 @@
 
 차이점은 무엇일까요? 리엑트는 업데이트를 `batches`로 처리하는데, 그것은 업데이트 목록을 어떻게든 수집하고 `flushed`해야 함을 의미합니다. 마우스 이벤트가 발생되면, 최상위 레벨에서 해당 이벤트가 처리되고, 여러 레이어의 래퍼를 통해 일괄 업데이트가 시작됩니다. 스키마에서 볼 수 있듯이 `ReactEventListener`가 `enabled`(1) 일 때만 발생하는데, 컴포넌트 마운팅 단계에서는, `ReactReconcileTransaction` 래퍼 중 하나가 그 `ReactEventListener`를 비활성화해서, 안전하게 마운팅 할 수 있게 합니다. 그렇다면 `setTimeout case`는 어떨까요? 이것 또한 간단합니다. `dirtyComponents`리스트에 컴포넌트를 넣기 전에, 리엑트는 트랜잭션이 시작(opened)되었는지 확인한 후에 클로즈하고 업데이트를 플러시 해야합니다.
 
-아시다시피, 리엑트는 ‘syntetic events’를 구현합니다. 사실 ‘syntax sugar’는 네이트브 이벤트를 래핑하고 있습니다. 그러나 그들은 여전히 우리 모두가 이벤트를 보던 방식대로 행동하려고 합니다. 코드에서 주석을 확인 할 수 있습니다.
+아시다시피, 리엑트는 ‘synthetic events’를 구현합니다. 사실 ‘syntax sugar’는 네이트브 이벤트를 래핑하고 있습니다. 그러나 그들은 여전히 우리 모두가 이벤트를 보던 방식대로 행동하려고 합니다. 코드에서 주석을 확인 할 수 있습니다.
 > '개발을 돕기 위해 실제 브라우저 이벤트를 시뮬레이트하여 좀 더 나은 통합 개발 도구를 얻을 수 있습니다.'
 
 ```javascript
@@ -23,7 +23,7 @@ ReactErrorUtils.invokeGuardedCallback = function (name, func, a) {
       fakeNode.addEventListener(evtType, boundFunc, false);
 
       var evt = document.createEvent('Event');
-      evt.initEvent(evtType, false, false); 
+      evt.initEvent(evtType, false, false);
 
       fakeNode.dispatchEvent(evt);
       fakeNode.removeEventListener(evtType, boundFunc, false);
