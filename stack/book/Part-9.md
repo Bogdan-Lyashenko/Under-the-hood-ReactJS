@@ -10,7 +10,7 @@ As you noticed on the scheme, the call of `setState` method, can be triggered in
 
 What actually makes that difference? Well, as you remember, React process updates in `batches`, it means that list of updates should be somehow collected and, then, `flushed`. The thing is that when mouse event appears, it’s handled on the top level and then, through several layers of wrappers the batched update will be started. By the way, as you can see it happens only if `ReactEventListener` is `enabled` (1), and, if you remember, during a component mounting phase, one of `ReactReconcileTransaction` wrappers actually disables it, and make mounting safe. Smart enough! But, what about `setTimeout case`? It’s also simple, before putting a component into `dirtyComponents` list React will make sure that transaction is started (opened), so then, later, it should be closed and updates flushed.
 
-As you know, React implements ‘syntetic events’, some ‘syntax sugar’ which in fact wraps native events. But then, later, they still try to behave how we all used to see events. You can see the comment in the code:
+As you know, React implements ‘synthetic events’, some ‘syntax sugar’ which in fact wraps native events. But then, later, they still try to behave how we all used to see events. You can see the comment in the code:
 > ‘To help development we can get better dev tool integration by simulating a real browser event’
 
 ```javascript
