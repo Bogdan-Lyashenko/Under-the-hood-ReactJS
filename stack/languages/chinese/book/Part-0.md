@@ -7,7 +7,7 @@
 ### ReactDOM.render
 让我们从 ReactDOM.render 的调用开始。
 
-入口点是 ReactDom.render，我们的应用程序是从这里开始渲染到 DOM 中的。为了方便调试，我创建了一个简单的 `<ExampleApplication />` 组件。因此，发生的第一件事就是 **JSX 会被转换成 React 组件**。它们是简单的、直白的对象。具有简单的结构。它们仅仅展示从本组件渲染中返回的内容，没有其他了。一些字段应该是你已经熟悉的，像 props、key 和 ref。属性类型是指由 JSX 描述的标记对象。所以，在我们的例子中，它就是 `ExampleApplication` 类，但是它也可以仅仅是 Button 标签的 `button` 字符串等其他类。另外，在 React 组件创建过程中，它会将 `defaultProps` 与 `props` 合并（如果显式声明了），并验证 `propTypes`。
+入口点是 ReactDom.render，我们的应用程序是从这里开始渲染到 DOM 中的。为了方便调试，我创建了一个简单的 `<ExampleApplication />` 组件。因此，发生的第一件事就是 **JSX 会被转换成 React 元素(element)**。它们是简单的、直白的对象。具有简单的结构。它们仅仅展示从本组件渲染中返回的内容，没有其他了。一些字段应该是你已经熟悉的，像 props、key 和 ref。属性类型是指由 JSX 描述的标记对象。所以，在我们的例子中，它就是 `ExampleApplication` 类，但是它也可以仅仅是 Button 标签的 `button` 字符串等其他类。另外，在 React 组件创建过程中，它会将 `defaultProps` 与 `props` 合并（如果显式声明了），并验证 `propTypes`。
 
 更多详细信息可参考源码：`src\isomorphic\classic\element\ReactElement.js`。
 
