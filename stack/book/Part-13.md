@@ -33,7 +33,7 @@ And then we're done!
 
 [To the next page: Part 14 >>](./Part-14.md)
 
-[<< To the previous page: Part 12](./Part-13.md)
+[<< To the previous page: Part 12](./Part-12.md)
 
 
 [Home](../../README.md)
