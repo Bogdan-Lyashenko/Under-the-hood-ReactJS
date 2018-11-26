@@ -8,7 +8,7 @@
 
 After mounting as result of method execution, we have HTML elements which are ready to be set into a document. Actually, `markup` (1) is generated, but `mountComponent`, despite how it’s named, is not actually HTML markup. It’s a data structure with fields `children`, `node` (actual DOM nodes), etc. But, we have our HTML element to put into the container (the one specified as the container in the `ReactDOM.render` call). While adding it into DOM, React will erase everything that was there before. `DOMLazyTree`(2) is a utils class that performs some operations with tree data structures, which we're actually doing during work with the DOM.
 
-The last thing is `parentNode.insertBefore(tree.node)`(3), where `parentNode` is the container `div` node and `tree.node` is actually our `ExampleAppliication` div node. Nice, the HTML elements that were created during mounting were finally inserted into the document.
+The last thing is `parentNode.insertBefore(tree.node)`(3), where `parentNode` is the container `div` node and `tree.node` is actually our `ExampleApplication` div node. Nice, the HTML elements that were created during mounting were finally inserted into the document.
 
 So, that’s it? Not exactly. As you remember, the `mount` call was wrapped into a transaction. It means that we should close it. Let’s check our `close` wrappers list. Mostly, we should restore some locked behavior `ReactInputSelection.restoreSelection()`, `ReactBrowserEventEmitter.setEnabled(previouslyEnabled)`, but also, we will notify all of the callbacks `this.reactMountReady.notifyAll`(4) we put into `transaction.reactMountReady` queue before. One of them is our favorite `componentDidMount`, which will be triggered exactly by the `close` wrapper.
 
