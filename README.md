@@ -1,6 +1,8 @@
 # Under the hood: React
 <em> This repository contains an explanation of inner work of React. In fact, I was debugging through the entire code base and put all the logic on visual block-schemes, analyzed them, summarized and explained main concepts and approaches. I've already finished with Stack version and now I work with the next, Fiber version.  </em>
 
+> If you like this project, follow me on Twitter [@bliashenko](https://twitter.com/bliashenko) to hear about things I am building.
+
 ### I wanted to automate process of "learning and documenting" as much as possible, so I started [codecrumbs project](https://github.com/Bogdan-Lyashenko/codecrumbs). It will help to build projects like "Under the hood ReactJs" in shorter time.
 
 >> Read in the best format from [github-pages website](https://bogdan-lyashenko.github.io/Under-the-hood-ReactJS/).
