@@ -6,7 +6,7 @@
 
 ### Transaction
 
-Well, the component instance should be somehow **connected** to React's eco-system and, of course, **make some influence** on it. There is a dedicated module `ReactUpdates` which helps with this. As you know, **React performs updates in chunks**, it means that it collects operations and performs them **together**. It’s always better because it allows applying some **pre-condition** and **post-conditions** just once for the whole list of items (chunk) instead of doing it for each item.
+Well, the component instance should be somehow **connected** to React's eco-system and, of course, **make some influence** on it. There is a dedicated module `ReactUpdates` which helps with this. As you know, **React performs updates in chunks**, which means that it collects operations and performs them **together**. It’s always better because it allows applying some **pre-condition** and **post-conditions** just once for the whole list of items (chunk) instead of doing it for each item.
 
 What actually helps handle this pre/post processing? Right, **transaction**! For someone it can be a new word, or at least its interpretation for UI needs, so let’s talk a bit more about it and start from a simple example.
 
