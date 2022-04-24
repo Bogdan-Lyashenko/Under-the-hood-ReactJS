@@ -48,7 +48,7 @@ E devemos provavelmente arrumar espaçamento e alinhamento também:
 
 <em>6.3 Parte 6 simplificada & refatorada (clicável)</em>
 
-Boa. Na verdade, é isso o que acontece aqui. Então podemos pegar o essencial da *Parte 2* e usar para o esquema final de `mounting`:
+Boa. Na verdade, é isso o que acontece aqui. Então podemos pegar o essencial da *Parte 6* e usar para o esquema final de `mounting`:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/6/part-6-C.svg)
 
