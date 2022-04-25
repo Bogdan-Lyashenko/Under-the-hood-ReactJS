@@ -47,9 +47,9 @@ E terminamos! Na verdade, terminamos a montagem. Vamos ver abaixo!
 
 <em>7.4 Montagem (clicável)</em>
 
-[Próxima página: Part 8 >>](./Part-8.md)
+[Próxima página: Parte 8 >>](./Part-8.md)
 
-[<< Página anterior: Part 6](./Part-6.md)
+[<< Página anterior: Parte 6](./Part-6.md)
 
 
 [Home](../../README.md)

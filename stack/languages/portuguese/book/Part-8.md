@@ -43,9 +43,9 @@ Boa. Na verdade, é isso o que acontece aqui. Então podemos pegar o essencial d
 E terminamos!
 
 
-[Próxima página: Part 9 >>](./Part-9.md)
+[Próxima página: Parte 9 >>](./Part-9.md)
 
-[<< Página anterior: Part 7](./Part-7.md)
+[<< Página anterior: Parte 7](./Part-7.md)
 
 
 [Home](../../README.md)

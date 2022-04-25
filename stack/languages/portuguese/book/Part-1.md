@@ -71,7 +71,7 @@ E devemos provavelmente arrumar espaçamento e alinhamento também:
 
 [![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/1/part-1-B.svg)
 
-<em>1.4 Part 1 simplificada & refatorada (clicável)</em>
+<em>1.4 Parte 1 simplificada & refatorada (clicável)</em>
 
 Boa. Na verdade, é isso o que acontece aqui. Então podemos pegar o essencial da *Parte 1* e usar para o esquema final de `mounting`:
 
